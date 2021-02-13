@@ -1,0 +1,2 @@
+A cute little surprise package, install Adobe XD to run and see a demo app running on your PC.
+This was actually my UI/UX project that i made in my first semester during my bachelors program and this was also the inspiration for this very same project.
