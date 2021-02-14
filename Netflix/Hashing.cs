@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 namespace Netflix
 {
     public class Hashing
@@ -32,24 +30,16 @@ namespace Netflix
             {
                 int sum = 0;
                 for (int k = 0; k < 2; k++)
-                {
                     sum = (key[0] - ASCIIVal);
-                }
                 int hv = sum % size;
-                // first i check if first index of string name match
-                // with first index of key
-                if(name[hv][0] == char.ToLower(key[0]) && visited[hv] == 0 || name[hv][0] == char.ToUpper(key[0]) && visited[hv] == 0)
+                if (name[hv][0] == char.ToLower(key[0]) && visited[hv] == 0 || name[hv][0] == char.ToUpper(key[0]) && visited[hv] == 0)
                 {
                     visited[hv] = 1;
                     int z;
                     if (name[hv].Length < key.Length)
-                    {
                         z = name[hv].Length;
-                    }
                     else
-                    {
                         z = key.Length;
-                    }
                     for (int m = 0; m < z; m++)
                     {
                         if (name[hv][m] == char.ToLower(key[m]) || name[hv][m] == char.ToUpper(key[m])
@@ -62,14 +52,9 @@ namespace Netflix
                     {
 
                         finalstring[index] = name[hv];
-                        //name[hv] = "0";
                         count = 0;
-                        //return;
                     }
                     count = 0;
-                    //name[hv] = "0";
-
-                    // after key find make that  name index to zero
                 }
 
                 else
@@ -79,51 +64,30 @@ namespace Netflix
                     for (int j = 0; j < size; j++)
                     {
                         int t = (hv + count1) % size;
-                        // if first index match with first index of key
                         if (name[t][0] == Char.ToUpper(key[0]) && visited[t] == 0 || name[t][0] == char.ToLower(key[0]) && visited[t] == 0)
                         {
                             visited[t] = 1;
-
                             int x;
                             if (name[t].Length < key.Length)
-                            {
                                 x = name[t].Length;
-                            }
                             else
-                            {
                                 x = key.Length;
-                            }
                             for (int m = 0; m < x; m++)
-                            {
-                                // if name index match with key index
                                 if (name[t][m] == char.ToUpper(key[m]) || name[t][m] == char.ToLower(key[m]))
-                                {
                                     count++;
-                                }
-                            }
-                            // if key match with file 
-                            //  write that key into file
                             if (count == x)
                             {
                                 finalstring[index] = name[t];
                                 index++;
-                                //name[t] = "0";
-                                //return;
                             }
                             count = 0;
-                            //name[t] = "0";
-                            //return;
-
-                            // after key find make that  name index to zero
                         }
                         count1++;
                     }
                 }
             }
             for (int i = 0; i < size; i++)
-            {
                 visited[i] = 0;
-            }
         }
     }
 }

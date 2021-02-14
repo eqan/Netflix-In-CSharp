@@ -13,7 +13,7 @@ namespace Netflix
         }
         void startIntro()
         {
-            string vidLocation = @"E:\C++\Netflix\Netflix\Custom UI\Netflix Starting Animation.mp4";
+            string vidLocation = Environment.CurrentDirectory + @"\Custom UI\Netflix Starting Animation.mp4";
             axMoviePlayer1.FileName = vidLocation;
             Console.WriteLine(axMoviePlayer1.Duration);
             axMoviePlayer1.Play();

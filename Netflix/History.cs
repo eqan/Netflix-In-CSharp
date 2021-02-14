@@ -26,7 +26,7 @@ namespace Netflix
         void importLogFile()
         {
             FileHandlingUtilites f = new FileHandlingUtilites();
-            string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
+            string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
             f.createFile(fileDirectory);
             stack = f.importToStack(fileDirectory);
         }
@@ -35,7 +35,7 @@ namespace Netflix
         {
             this.Hide();
             string selected = listView1.SelectedItems[0].Text;
-            string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
+            string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
             FileHandlingUtilites f = new FileHandlingUtilites();
             f.WriteData(fileDirectory, selected);
             VideoPlayer j = new VideoPlayer(userName, accountName, selected, profileIndex);
@@ -55,7 +55,7 @@ namespace Netflix
                 {
                     if (stack.Peek() == " " || stack.Peek() == "\n")
                         continue;
-                    imageLocation = @"E:\C++\Netflix\Netflix\Data\Movie Titles\Movie Icons\" + stack.Peek() + ".png";
+                    imageLocation = Environment.CurrentDirectory + @"\Data\Movie Titles\Movie Icons\" + stack.Peek() + ".png";
                     imgs.Images.Add(Image.FromFile(imageLocation));
                     ListViewItem item = new ListViewItem();
                     item.ImageIndex = count;
@@ -116,6 +116,10 @@ namespace Netflix
             label5.Location = new Point(profileBtn.Location.X, profileBtn.Location.Y + 30);
             this.Controls.Add(label5);
             label5.BringToFront();
+            label6 = new Label();
+            label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
+            this.Controls.Add(label6);
+            label6.BringToFront();
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -176,6 +180,67 @@ namespace Netflix
             AccountInfo f = new AccountInfo(userName, accountName, profileIndex);
             f.Show();
         }
+
+        Label label6;
+        bool isCollapsed = false;
+
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                menuItem1.Width = settingsBtn.Width;
+                menuItem1.Height = settingsBtn.Height;
+                menuItem1.Text = "SignOut";
+                menuItem1.BackColor = ColorTranslator.FromHtml("#202020");
+                label6.Height = 5;
+                label6.Width = settingsBtn.Width;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                isCollapsed = true;
+            }
+            else
+            {
+                menuItem1.Width = 0;
+                menuItem1.Height = 0;
+                menuItem1.Text = "";
+                menuItem1.BackColor = Color.Transparent;
+                label6.Width = 0;
+                label6.BackColor = Color.Transparent;
+                isCollapsed = false;
+            }
+        }
+
+        private void settingsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.Width = 0;
+                label6.Height = 5;
+                label6.BackColor = Color.Transparent;
+            }
+        }
+
+        private void menuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm f = new LoginForm();
+            f.Show();
+        }
+        private void settingsBtn_MouseHover(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.BorderStyle = BorderStyle.Fixed3D;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                label6.Width = 0;
+                label6.Height = 5;
+                while (label6.Width != settingsBtn.Width)
+                    label6.Width += 1;
+                label6.BorderStyle = BorderStyle.None;
+            }
+        }
+
+
 
         private void homeBtn_MouseHover(object sender, EventArgs e)
         {

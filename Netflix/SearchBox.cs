@@ -16,7 +16,7 @@ namespace Netflix
         {
             InitializeComponent();
             initializeLabels();
-            const string path = @"E:\C++\Netflix\Netflix\Data\Movie Titles\Movie Icons\";
+            string path = Environment.CurrentDirectory + @"\Data\Movie Titles\Movie Icons\";
             obj = new Hashing(path);
             str = new string[obj.size];
             this.userName = userName; this.accountName = accountName;
@@ -34,7 +34,7 @@ namespace Netflix
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
             string selected = listView1.SelectedItems[0].Text;
-            string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
+            string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
             FileHandlingUtilites f = new FileHandlingUtilites();
             f.WriteData(fileDirectory, selected);
             this.Hide();
@@ -46,7 +46,7 @@ namespace Netflix
         private void populate()
         {
             int i = 0;
-            string imageLocation = @"E:\C++\Netflix\Netflix\Data\Movie Titles\Movie Icons\";
+            string imageLocation = Environment.CurrentDirectory + @"\Data\Movie Titles\Movie Icons\";
             ImageList imgs = new ImageList();
             imgs.ImageSize = new Size(150, 100);
             listView1.SmallImageList = imgs; // Setting Size Of Images
@@ -56,8 +56,6 @@ namespace Netflix
             {
                 foreach (String path in paths)
                 {
-                    //Console.WriteLine(imageLocation + obj.finalstring[0]+".jpg");
-                    //Console.WriteLine(path);
                     for (int l = 0; l < obj.size; l++)
                     {
                         if (path == imageLocation + obj.finalstring[l] + ".png")
@@ -108,9 +106,6 @@ namespace Netflix
             listView1.View = View.Details;
             listView1.Columns.Add("ThumbNails", 150);
             listView1.Columns.Add("Titles", 300);
-            //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            //listView1.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -144,6 +139,11 @@ namespace Netflix
             label5.Location = new Point(profileBtn.Location.X, profileBtn.Location.Y + 30);
             this.Controls.Add(label5);
             label5.BringToFront();
+            label6 = new Label();
+            label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
+            this.Controls.Add(label6);
+            label6.BringToFront();
+
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -212,6 +212,64 @@ namespace Netflix
             AccountInfo f = new AccountInfo(userName, accountName, profileIndex);
             f.Show();
         }
+        Label label6;
+        bool isCollapsed = false;
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                menuItem1.Width = settingsBtn.Width;
+                menuItem1.Height = settingsBtn.Height;
+                menuItem1.Text = "SignOut";
+                menuItem1.BackColor = ColorTranslator.FromHtml("#202020");
+                label6.Width = settingsBtn.Width;
+                label6.Height = 5;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                isCollapsed = true;
+            }
+            else
+            {
+                menuItem1.Width = 0;
+                menuItem1.Height = 0;
+                menuItem1.Text = "";
+                menuItem1.BackColor = Color.Transparent;
+                label6.Width = 0;
+                label6.BackColor = Color.Transparent;
+                isCollapsed = false;
+            }
+        }
+
+        private void settingsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.Width = 0;
+                label6.Height = 5;
+                label6.BackColor = Color.Transparent;
+            }
+        }
+
+        private void menuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm f = new LoginForm();
+            f.Show();
+        }
+        private void settingsBtn_MouseHover(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.BorderStyle = BorderStyle.Fixed3D;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                label6.Width = 0;
+                label6.Height = 5;
+                while (label6.Width != settingsBtn.Width)
+                    label6.Width += 1;
+                label6.BorderStyle = BorderStyle.None;
+            }
+        }
+
+
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -281,6 +339,5 @@ namespace Netflix
             label5.Height = 5;
             label5.BackColor = Color.Transparent;
         }
-
     }
 }

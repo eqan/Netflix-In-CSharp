@@ -27,7 +27,7 @@ namespace Netflix
         {
             FileHandlingUtilites f = new FileHandlingUtilites();
             userCount = 0;
-            string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + currentAccount + @"\";
+            string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + currentAccount + @"\";
             f.createDirectory(fileDirectory);
 
             string accountsDirectory = fileDirectory + currentAccount + "Profiles.txt";
@@ -59,7 +59,7 @@ namespace Netflix
                 {
                     if (accountStr != "\n" || accountStr != "" || passwordStr != "\n" || passwordStr != "")
                     {
-                        string imageLocation = @"E:\C++\Netflix\Netflix\Data\Profiles\Profiles Icons\" + (userCount).ToString() + ".png";
+                        string imageLocation = Environment.CurrentDirectory + @"\Data\Profiles\Profiles Icons\" + (userCount).ToString() + ".png";
                         Console.WriteLine(userCount + "\n");
                         profiles[userCount] = accountStr;
                         passwords[userCount] = passwordStr;
@@ -91,7 +91,6 @@ namespace Netflix
                                 label5.Text = accountStr;
                                 break;
                         }
-                        //MessageBox.Show(accountStr + " " + passwordStr);
                         userCount++;
                     }
                 }
@@ -104,7 +103,7 @@ namespace Netflix
         private void addUserAndPassword()
         {
             FileHandlingUtilites f = new FileHandlingUtilites();
-            string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + currentAccount + "/";
+            string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + currentAccount + "/";
             f.WriteData((fileDirectory + currentAccount + "Profiles.txt"), inputBox(false));
             f.WriteData((fileDirectory + currentAccount + "Passwords.txt"), inputBox(true));
             storeProfiles();

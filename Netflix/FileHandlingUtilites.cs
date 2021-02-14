@@ -64,6 +64,28 @@ namespace Netflix
             return obj;
         }
 
+        public string[] returnContent(string fileDirectory)
+        {
+            Queue queue = new Queue();
+            FileStream fs = new FileStream(fileDirectory, FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            sr.BaseStream.Seek(0, SeekOrigin.Begin);
+            string str = "NULL";
+            while (str != null)
+            {
+                str = sr.ReadLine();
+                queue.enqueue(str);
+            }
+            sr.Close();
+            fs.Close();
+            string[] files = new string[(queue.rear)];
+            for (int i = 0; i < (queue.rear); i++)
+            {
+                files[i] = queue.dequeue();
+            }
+            return files;
+        }
+
 
         public string[] readAllFiles(string fileDirectory)
         {
@@ -97,25 +119,6 @@ namespace Netflix
             fs.Close();
             return filesSize;
 
-        }
-        public string[] returnContentsOfAFile(string fileDirectory)
-        {
-            int size = calculateContentSizeOfAFile(fileDirectory);
-            string[] arr = new string[size];
-            FileStream fs = new FileStream(fileDirectory, FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            sr.BaseStream.Seek(0, SeekOrigin.Begin);
-            string str = sr.ReadLine();
-            int i = 0;
-            while (str != null)
-            {
-                str = sr.ReadLine();
-                arr[i] = str;
-                i++;
-            }
-            sr.Close();
-            fs.Close();
-            return arr;
         }
         public void ReadData(string fileDirectory)
         {

@@ -25,8 +25,6 @@ namespace Netflix
         public StartPage()
         {
             InitializeComponent();
-            this.BackgroundImage = Properties.Resources.BackGroundWallPaer;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
         }
 
         private void logOutBtn_Click(object sender, EventArgs e)

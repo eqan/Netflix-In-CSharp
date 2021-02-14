@@ -18,7 +18,7 @@ namespace Netflix
             this.currentProfile = user;
             this.currentAccount = account;
             this.profileIndex = index;
-            fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + currentAccount + @"\" + currentProfile;
+            fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + currentAccount + @"\" + currentProfile;
             fileProcesses();
             selectedLabels = new string[totalOptions];
             for (int i = 0; i < totalOptions; i++)
@@ -62,7 +62,7 @@ namespace Netflix
         // ? Boolean Type Refers to True if Selected & False For Unselected 
         private void setIDImage(int index, bool type)
         {
-            string imageLocation = @"E:\C++\Netflix\Netflix\Data\Movie Titles\Genre Icons\";
+            string imageLocation = Environment.CurrentDirectory + @"\Data\Movie Titles\Genre Icons\";
             switch (index)
             {
                 case 0:

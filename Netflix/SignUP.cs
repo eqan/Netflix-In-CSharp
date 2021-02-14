@@ -14,7 +14,7 @@ namespace Netflix
         }
         void importAccounts()
         {
-            string accountLocation = @"E:\C++\Netflix\Netflix\Data\accounts.txt";
+            string accountLocation = Environment.CurrentDirectory + @"\Data\accounts.txt";
             FileHandlingUtilites f = new FileHandlingUtilites();
             linkedList = f.importToLinkedList(accountLocation);
         }
@@ -28,17 +28,9 @@ namespace Netflix
         {
             resetEntries();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="statusNumber"></param>
-        /// StatusNumber ===  User ID
-        /// <param name="setStatus"></param>
-        /// setStatus ===  true||wrong
-        /// <param name="message"></param>
         private void setStatus(int statusNumber, bool setStatus, string message)
         {
-            string imageLocation = @"E:\C++\Netflix\Netflix\Custom UI\UI Icons\";
+            string imageLocation = Environment.CurrentDirectory + @"\Custom UI\UI Icons\";
             switch (statusNumber)
             {
                 case 0:
@@ -183,9 +175,9 @@ namespace Netflix
             if (pass == confirmPass)
             {
                 setStatus(2, true, "");
-                string fileDirectory = @"E:\C++\Netflix\Netflix\Data\accounts.txt";
+                string fileDirectory = Environment.CurrentDirectory + @"\Data\accounts.txt";
                 storeData(fileDirectory, ID);
-                fileDirectory = @"E:\C++\Netflix\Netflix\Data\passwords.txt";
+                fileDirectory = Environment.CurrentDirectory + @"\Data\passwords.txt";
                 storeData(fileDirectory, pass);
                 this.Hide();
                 LoginForm f = new LoginForm();

@@ -2,34 +2,48 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 
 namespace Netflix
 {
     public partial class VideoPlayer : Form
     {
+        FileHandlingUtilites fileHandling = new FileHandlingUtilites();
         DoublyLinkedList circularLinkedList;
-        string[] arr, fileDirectories;
+        string[] arr, fileDirectories, likedVideos;
         string ImageNewName = "", userName, accountName;
         int count = 0, tagIndex = 0, profileIndex;
         string currentMovie;
-        bool playBackStatus;
-        string imageLocation = @"E:\C++\Netflix\Netflix\Custom UI\Video Player Icons\";
+        bool playBackStatus, currentLikeStatus = false;
+        string imageLocation = Environment.CurrentDirectory + @"\Custom UI\Video Player Icons\";
         public VideoPlayer(string userName, string accountName, string movieName, int index)
         {
             InitializeComponent();
+            initializeLabels();
+            initializeAXMoviePlayerSettings();
             circularLinkedList = new DoublyLinkedList();
             this.userName = userName; this.accountName = accountName;
             this.profileIndex = index;
             currentMovie = movieName;
             playBackStatus = true;
-            axMoviePlayer1.SoundVolume = volumeControl.Value;
             initalizeControlBar();
+            importLikedVideos();
             startMovie();
             Method1();
         }
 
+        void initializeLabels()
+        {
+            label6 = new Label();
+            label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
+            this.Controls.Add(label6);
+            label6.BringToFront();
+        }
+
         void initalizeControlBar()
         {
+            likeBtn.ImageLocation = imageLocation + "heart_unselected.png";
+            likeBtn.SizeMode = PictureBoxSizeMode.Zoom;
             playPauseBtn.ImageLocation = imageLocation + "Pause.png";
             playPauseBtn.SizeMode = PictureBoxSizeMode.Zoom;
             fastForwardBtn.ImageLocation = imageLocation + "Forward.png";
@@ -45,24 +59,55 @@ namespace Netflix
             fullScreenBtn.ImageLocation = imageLocation + "Full Screen.png";
             fullScreenBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             fullScreenBtn.BackColor = Color.Transparent;
+
+        }
+
+        void initializeAXMoviePlayerSettings()
+        {
+            volumeControl.Value = 10000;
+            axMoviePlayer1.UseVMR9 = true;
+            axMoviePlayer1.RegisterMsg();
+            axMoviePlayer1.SetMPEG1AudioChannel(0);
+        }
+
+        void importLikedVideos()
+        {
+            string srcFileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\likedVideos.txt";
+            fileHandling.createFile(srcFileDirectory);
+            likedVideos = fileHandling.returnContent(srcFileDirectory);
+        }
+
+        bool isVideoLiked(string currentVideo)
+        {
+            foreach (string video in likedVideos)
+            {
+                if (video == currentVideo)
+                    return true;
+            }
+            return false;
         }
 
         void startMovie()
         {
+            if (isVideoLiked(currentMovie))
+                likeON();
+            else
+                likeOFF();
             progressBar1.Value = 0;
+            totalDuration.Text = "0";
             timer1.Start();
             titleLabel.Text = currentMovie;
             label1.Width = titleLabel.Width + 70;
-            axMoviePlayer1.FileName = @"E:\C++\Netflix\Netflix\Data\Movie Titles\Movie Trailers\" + currentMovie + ".mp4";
+            axMoviePlayer1.FileName = Environment.CurrentDirectory + @"\Data\Movie Titles\Movie Trailers\" + currentMovie + ".mp4";
             axMoviePlayer1.Play();
-            progressBar1.Width = axMoviePlayer1.Width;
             progressBar1.Maximum = (int)axMoviePlayer1.Duration;
+            TimeSpan time = TimeSpan.FromSeconds(progressBar1.Maximum);
+            totalDuration.Text = time.ToString();
         }
         public void Method1()
         {
-            FileHandlingUtilites fileHandling = new FileHandlingUtilites();
-            string srcFileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + accountName + @"\" + userName + @"\preferences.txt";
-            string destFileDirectory = @"E:\C++\Netflix\Netflix\Data\Movie Titles\", extension = ".txt";
+            string srcFileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\preferences.txt";
+            string destFileDirectory = Environment.CurrentDirectory + @"\Data\Movie Titles\", extension = ".txt";
             int size = fileHandling.calculateContentSizeOfDirectories(srcFileDirectory, destFileDirectory, extension);
             fileDirectories = new string[fileHandling.fileDirectories.Length];
             fileDirectories = fileHandling.fileDirectories;
@@ -77,10 +122,7 @@ namespace Netflix
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] != " " || arr[i] != "\n")
-                {
                     circularLinkedList.insertEnd(arr[i]);
-                    //Console.WriteLine(circularLinkedList.str_name[i]);
-                }
             }
             circularLinkedList.storeData(arr.Length);
         }
@@ -111,9 +153,8 @@ namespace Netflix
             while (currentMovie == "" || currentMovie == null)
                 currentMovie = listView1.Items[++tagIndex].Text;
             string selected = circularLinkedList.str_name[tagIndex];
-            string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
-            FileHandlingUtilites f = new FileHandlingUtilites();
-            f.WriteData(fileDirectory, selected);
+            string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
+            fileHandling.WriteData(fileDirectory, selected);
             startMovie();
         }
         private void previousBtn_Click(object sender, EventArgs e)
@@ -127,15 +168,14 @@ namespace Netflix
             }
             catch
             {
-                tagIndex = circularLinkedList.str_name.Length - 2;
+                tagIndex = circularLinkedList.str_name.Length - 5;
                 currentMovie = listView1.Items[tagIndex].Text;
             }
             while (currentMovie == "" || currentMovie == null)
                 currentMovie = listView1.Items[--tagIndex].Text;
             string selected = circularLinkedList.str_name[tagIndex];
-            string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
-            FileHandlingUtilites f = new FileHandlingUtilites();
-            f.WriteData(fileDirectory, selected);
+            string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
+            fileHandling.WriteData(fileDirectory, selected);
             startMovie();
         }
 
@@ -165,23 +205,22 @@ namespace Netflix
 
         private void reverseBtn_Click(object sender, EventArgs e)
         {
-            int reverseValue = (int)axMoviePlayer1.GetPos() - 10;
-            if (progressBar1.Value >= 10)
-                progressBar1.Value -= 10;
-            else return;
-            axMoviePlayer1.Pause();
-            axMoviePlayer1.StartTime = reverseValue;
-            axMoviePlayer1.Play();
+            this.axMoviePlayer1.SetPos((double)(axMoviePlayer1.GetPos() - 10));
+            timer1.Interval += 1000;
+        }
+        private void fastForwardBtn_Click(object sender, EventArgs e)
+        {
+            this.axMoviePlayer1.SetPos((double)(axMoviePlayer1.GetPos() + 10));
+            timer1.Interval += 1000;
         }
 
         private void volume_Scroll(object sender, EventArgs e)
         {
-            axMoviePlayer1.SoundVolume = volumeControl.Value;
-            if (axMoviePlayer1.SoundVolume < 0)
-                axMoviePlayer1.SoundVolume = 100;
-            else if (axMoviePlayer1.SoundVolume > 100)
-                axMoviePlayer1.SoundVolume = 0;
-            volumePercentage.Text = ((axMoviePlayer1.SoundVolume).ToString() + "%");
+            axMoviePlayer1.SoundVolume = volumeControl.Value - 3500;
+            int realVolume = (axMoviePlayer1.SoundVolume / 100 + 35);
+            if (realVolume < 0)
+                realVolume *= -1;
+            volumePercentage.Text = ((realVolume).ToString() + "%");
         }
 
         private void fullScreenBtn_Click(object sender, EventArgs e)
@@ -189,16 +228,6 @@ namespace Netflix
             axMoviePlayer1.ShowFullScreen(true);
         }
 
-        private void fastForwardBtn_Click(object sender, EventArgs e)
-        {
-            int forwardValue = (int)axMoviePlayer1.GetPos() + 10;
-            if (progressBar1.Value <= axMoviePlayer1.Duration - 10)
-                progressBar1.Value += 10;
-            else return;
-            axMoviePlayer1.Pause();
-            axMoviePlayer1.StartTime = forwardValue;
-            axMoviePlayer1.Play();
-        }
 
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -213,9 +242,8 @@ namespace Netflix
                 axMoviePlayer1.Stop();
                 this.Hide();
                 string selected = listView1.SelectedItems[0].Text;
-                string fileDirectory = @"E:\C++\Netflix\Netflix\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
-                FileHandlingUtilites f = new FileHandlingUtilites();
-                f.WriteData(fileDirectory, selected);
+                string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
+                fileHandling.WriteData(fileDirectory, selected);
                 VideoPlayer j = new VideoPlayer(userName, accountName, selected, profileIndex);
                 j.Show();
             }
@@ -233,7 +261,7 @@ namespace Netflix
                 {
                     if (circularLinkedList.str_name[i] == " " || circularLinkedList.str_name[i] == "\n")
                         continue;
-                    imageLocation = @"E:\C++\Netflix\Netflix\Data\Movie Titles\Movie Icons\" + circularLinkedList.str_name[i] + ".png";
+                    imageLocation = Environment.CurrentDirectory + @"\Data\Movie Titles\Movie Icons\" + circularLinkedList.str_name[i] + ".png";
                     imgs.Images.Add(Image.FromFile(imageLocation));
                     listView1.Items.Add(new ListViewItem
                     {
@@ -275,6 +303,66 @@ namespace Netflix
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+        Label label6;
+        bool isCollapsed = false;
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                menuItem1.Width = settingsBtn.Width;
+                menuItem1.Height = settingsBtn.Height;
+                menuItem1.Text = "SignOut";
+                menuItem1.BackColor = ColorTranslator.FromHtml("#202020");
+                label6.Width = settingsBtn.Width;
+                label6.Height = 5;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                isCollapsed = true;
+            }
+            else
+            {
+                menuItem1.Width = 0;
+                menuItem1.Height = 0;
+                menuItem1.Text = "";
+                menuItem1.BackColor = Color.Transparent;
+                label6.Width = 0;
+                label6.BackColor = Color.Transparent;
+                isCollapsed = false;
+            }
+        }
+
+        private void settingsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.Width = 0;
+                label6.Height = 5;
+                label6.BackColor = Color.Transparent;
+            }
+        }
+
+        private void settingsBtn_MouseHover(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.BorderStyle = BorderStyle.Fixed3D;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                label6.Width = 0;
+                label6.Height = 5;
+                while (label6.Width != settingsBtn.Width)
+                    label6.Width += 1;
+                label6.BorderStyle = BorderStyle.None;
+            }
+        }
+
+
+        private void menuItem1_Click(object sender, EventArgs e)
+        {
+            axMoviePlayer1.Stop();
+            this.Hide();
+            LoginForm f = new LoginForm();
+            f.Show();
+        }
+
         private void Form_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -287,7 +375,13 @@ namespace Netflix
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value == axMoviePlayer1.Duration)
-                playOrPause();
+            {
+                object s = null;
+                EventArgs ef = null;
+                nextBtn_Click(s, ef);
+            }
+            TimeSpan time = TimeSpan.FromSeconds(progressBar1.Value);
+            currentDuration.Text = time.ToString();
             progressBar1.Increment(1);
         }
 
@@ -387,6 +481,36 @@ namespace Netflix
             while (label5.Width != searchBtn.Width)
                 label5.Width += 1;
             label5.BorderStyle = BorderStyle.None;
+        }
+
+        private void likeBtn_Click(object sender, EventArgs e)
+        {
+            if (currentLikeStatus == false)
+            {
+                likeON();
+                string srcFileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\likedVideos.txt";
+                fileHandling.WriteData(srcFileDirectory, currentMovie);
+            }
+            else
+            {
+                likeOFF();
+                string srcFileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\likedVideos.txt";
+                File.WriteAllLines(srcFileDirectory, File.ReadAllLines(srcFileDirectory).Skip(1));
+            }
+        }
+
+        private void likeON()
+        {
+            currentLikeStatus = true;
+            likeBtn.ImageLocation = imageLocation + "heart_selected.png";
+            likeBtn.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+        private void likeOFF()
+        {
+            currentLikeStatus = false;
+            likeBtn.ImageLocation = imageLocation + "heart_unselected.png";
+            likeBtn.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void profileBtn_MouseLeave(object sender, EventArgs e)

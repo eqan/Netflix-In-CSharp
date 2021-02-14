@@ -36,12 +36,15 @@
             this.searchBtn = new System.Windows.Forms.PictureBox();
             this.homeBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.menuItem1 = new System.Windows.Forms.Button();
+            this.settingsBtn = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -62,7 +65,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.menuItem1);
             this.panel3.Controls.Add(this.profileBtn);
+            this.panel3.Controls.Add(this.settingsBtn);
             this.panel3.Controls.Add(this.historyBtn);
             this.panel3.Controls.Add(this.searchBtn);
             this.panel3.Controls.Add(this.homeBtn);
@@ -137,6 +142,35 @@
             this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
             this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
             // 
+            // menuItem1
+            // 
+            this.menuItem1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.menuItem1.FlatAppearance.BorderSize = 0;
+            this.menuItem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuItem1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuItem1.ForeColor = System.Drawing.Color.White;
+            this.menuItem1.Location = new System.Drawing.Point(34, 426);
+            this.menuItem1.Name = "menuItem1";
+            this.menuItem1.Size = new System.Drawing.Size(0, 0);
+            this.menuItem1.TabIndex = 26;
+            this.menuItem1.UseVisualStyleBackColor = false;
+            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
+            this.settingsBtn.Location = new System.Drawing.Point(34, 454);
+            this.settingsBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Padding = new System.Windows.Forms.Padding(0, 50, 0, 50);
+            this.settingsBtn.Size = new System.Drawing.Size(66, 26);
+            this.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.settingsBtn.TabIndex = 25;
+            this.settingsBtn.TabStop = false;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            this.settingsBtn.MouseLeave += new System.EventHandler(this.settingsBtn_MouseLeave);
+            this.settingsBtn.MouseHover += new System.EventHandler(this.settingsBtn_MouseHover);
+            // 
             // History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +207,7 @@
         private System.Windows.Forms.PictureBox searchBtn;
         private System.Windows.Forms.PictureBox homeBtn;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button menuItem1;
+        private System.Windows.Forms.PictureBox settingsBtn;
     }
 }

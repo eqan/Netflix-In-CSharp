@@ -43,7 +43,7 @@ namespace Netflix
         }
         private void setStatus(int statusNumber, bool setStatus, string message)
         {
-            string imageLocation = @"E:\C++\Netflix\Netflix\Custom UI\UI Icons\";
+            string imageLocation = Environment.CurrentDirectory + @"\Custom UI\UI Icons\";
             switch (statusNumber)
             {
                 case 0:
@@ -78,10 +78,10 @@ namespace Netflix
         private void importPasswordsAndUsers()
         {
             accounts = new LinkedList();
-            string accountsDirectory = @"E:\C++\Netflix\Netflix\Data\accounts.txt";
+            string accountsDirectory = Environment.CurrentDirectory + @"\Data\accounts.txt";
             accounts = f.importToLinkedList(accountsDirectory);
             passwords = new LinkedList();
-            string passwordDirectory = @"E:\C++\Netflix\Netflix\Data\passwords.txt";
+            string passwordDirectory = Environment.CurrentDirectory + @"\Data\passwords.txt";
             passwords = f.importToLinkedList(passwordDirectory);
         }
 

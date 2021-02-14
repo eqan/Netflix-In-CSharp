@@ -170,7 +170,7 @@
             // logo
             // 
             this.logo.BackColor = System.Drawing.Color.Black;
-            this.logo.Image = global::Netflix.Properties.Resources.Logo;
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
             this.logo.Location = new System.Drawing.Point(271, 13);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(289, 117);

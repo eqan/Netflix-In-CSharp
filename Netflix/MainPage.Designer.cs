@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.listView1 = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.menuItem1 = new System.Windows.Forms.Button();
+            this.settingsBtn = new System.Windows.Forms.PictureBox();
             this.profileBtn = new System.Windows.Forms.PictureBox();
             this.historyBtn = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.PictureBox();
@@ -44,7 +47,9 @@
             this.AudiencWatchLabel = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).BeginInit();
@@ -73,6 +78,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.menuItem1);
+            this.panel3.Controls.Add(this.settingsBtn);
             this.panel3.Controls.Add(this.profileBtn);
             this.panel3.Controls.Add(this.historyBtn);
             this.panel3.Controls.Add(this.searchBtn);
@@ -82,6 +89,35 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 544);
             this.panel3.TabIndex = 20;
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.menuItem1.FlatAppearance.BorderSize = 0;
+            this.menuItem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuItem1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuItem1.ForeColor = System.Drawing.Color.White;
+            this.menuItem1.Location = new System.Drawing.Point(30, 464);
+            this.menuItem1.Name = "menuItem1";
+            this.menuItem1.Size = new System.Drawing.Size(0, 0);
+            this.menuItem1.TabIndex = 7;
+            this.menuItem1.UseVisualStyleBackColor = false;
+            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
+            this.settingsBtn.Location = new System.Drawing.Point(30, 492);
+            this.settingsBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Padding = new System.Windows.Forms.Padding(0, 50, 0, 50);
+            this.settingsBtn.Size = new System.Drawing.Size(66, 26);
+            this.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.settingsBtn.TabIndex = 6;
+            this.settingsBtn.TabStop = false;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            this.settingsBtn.MouseLeave += new System.EventHandler(this.settingsBtn_MouseLeave);
+            this.settingsBtn.MouseHover += new System.EventHandler(this.settingsBtn_MouseHover);
             // 
             // profileBtn
             // 
@@ -240,6 +276,10 @@
             this.richTextBox1.Text = "After selling his soul to save a loved one, daredevil biker Johnny Blaze pays the" +
     " price by becoming a flame-skulled bounty hunter for Mephistopheles";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +305,7 @@
             this.Load += new System.EventHandler(this.MainPage_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).EndInit();
@@ -295,5 +336,8 @@
         private System.Windows.Forms.Label AudiencWatchLabel;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button menuItem1;
+        private System.Windows.Forms.PictureBox settingsBtn;
+        private System.Windows.Forms.Timer timer1;
     }
 }

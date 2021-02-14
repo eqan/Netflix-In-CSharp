@@ -33,12 +33,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.menuItem1 = new System.Windows.Forms.Button();
+            this.settingsBtn = new System.Windows.Forms.PictureBox();
             this.profileBtn = new System.Windows.Forms.PictureBox();
             this.historyBtn = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.PictureBox();
             this.homeBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).BeginInit();
@@ -53,9 +56,9 @@
             this.listView1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(161, 101);
+            this.listView1.Location = new System.Drawing.Point(161, 95);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(641, 470);
+            this.listView1.Size = new System.Drawing.Size(641, 476);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView1_AfterLabelEdit);
@@ -87,6 +90,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.menuItem1);
+            this.panel3.Controls.Add(this.settingsBtn);
             this.panel3.Controls.Add(this.profileBtn);
             this.panel3.Controls.Add(this.historyBtn);
             this.panel3.Controls.Add(this.searchBtn);
@@ -96,6 +101,35 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 544);
             this.panel3.TabIndex = 20;
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.menuItem1.FlatAppearance.BorderSize = 0;
+            this.menuItem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuItem1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuItem1.ForeColor = System.Drawing.Color.White;
+            this.menuItem1.Location = new System.Drawing.Point(31, 462);
+            this.menuItem1.Name = "menuItem1";
+            this.menuItem1.Size = new System.Drawing.Size(0, 0);
+            this.menuItem1.TabIndex = 7;
+            this.menuItem1.UseVisualStyleBackColor = false;
+            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
+            this.settingsBtn.Location = new System.Drawing.Point(31, 490);
+            this.settingsBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Padding = new System.Windows.Forms.Padding(0, 50, 0, 50);
+            this.settingsBtn.Size = new System.Drawing.Size(66, 26);
+            this.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.settingsBtn.TabIndex = 6;
+            this.settingsBtn.TabStop = false;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            this.settingsBtn.MouseLeave += new System.EventHandler(this.settingsBtn_MouseLeave);
+            this.settingsBtn.MouseHover += new System.EventHandler(this.settingsBtn_MouseHover);
             // 
             // profileBtn
             // 
@@ -180,6 +214,7 @@
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).EndInit();
@@ -201,5 +236,7 @@
         private System.Windows.Forms.PictureBox searchBtn;
         private System.Windows.Forms.PictureBox homeBtn;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button menuItem1;
+        private System.Windows.Forms.PictureBox settingsBtn;
     }
 }

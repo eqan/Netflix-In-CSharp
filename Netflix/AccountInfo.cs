@@ -6,9 +6,10 @@ namespace Netflix
 {
     public partial class AccountInfo : Form
     {
-        Label label2, label3, label4, label5;
+        Label label2, label3, label4, label5, label6;
         string userName, accountName;
         int profileIndex = 1, numberOfVideos;
+        bool isCollapsed = false;
         public AccountInfo(string userName, string accountName, int index)
         {
             this.userName = userName;
@@ -50,14 +51,17 @@ namespace Netflix
             label5.BackColor = Color.Red;
             label5.Width = 0;
             label5.Height = 5;
-            while (label5.Width != searchBtn.Width)
-                label5.Width += 1;
+            label5.Width = searchBtn.Width;
             label5.BorderStyle = BorderStyle.None;
+            label6 = new Label();
+            label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
+            this.Controls.Add(label6);
+            label6.BringToFront();
         }
 
         void importInformation()
         {
-            string imageLocation = @"E:\C++\Netflix\Netflix\Data\Profiles\Profiles Icons\" + profileIndex + ".png";
+            string imageLocation = Environment.CurrentDirectory + @"\Data\Profiles\Profiles Icons\" + profileIndex + ".png";
             pictureBox1.ImageLocation = imageLocation;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             Console.WriteLine(imageLocation);
@@ -132,6 +136,62 @@ namespace Netflix
                 label2.Width += 1;
             label2.BorderStyle = BorderStyle.None;
         }
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                menuItem1.Width = settingsBtn.Width;
+                menuItem1.Height = settingsBtn.Height;
+                menuItem1.Text = "SignOut";
+                menuItem1.BackColor = ColorTranslator.FromHtml("#202020");
+                label6.Width = settingsBtn.Width;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                isCollapsed = true;
+            }
+            else
+            {
+                menuItem1.Width = 0;
+                menuItem1.Height = 0;
+                menuItem1.Text = "";
+                menuItem1.BackColor = Color.Transparent;
+                label6.Width = 0;
+                label6.BackColor = Color.Transparent;
+                isCollapsed = false;
+            }
+        }
+
+        private void settingsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.Width = 0;
+                label6.Height = 5;
+                label6.BackColor = Color.Transparent;
+            }
+        }
+
+        private void menuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm f = new LoginForm();
+            f.Show();
+        }
+
+        private void settingsBtn_MouseHover(object sender, EventArgs e)
+        {
+            if (!isCollapsed)
+            {
+                label6.BorderStyle = BorderStyle.Fixed3D;
+                label6.BackColor = ColorTranslator.FromHtml("#0066B4");
+                label6.Width = 0;
+                label6.Height = 5;
+                while (label6.Width != settingsBtn.Width)
+                    label6.Width += 1;
+                label6.BorderStyle = BorderStyle.None;
+            }
+        }
+
 
         private void homeBtn_MouseLeave(object sender, EventArgs e)
         {
