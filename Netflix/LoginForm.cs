@@ -7,6 +7,23 @@ namespace Netflix
 {
     public partial class LoginForm : Form
     {
+        // ? Handles External User Interactions
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void LoginForm_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
         LinkedList passwords, accounts;
 
         FileHandlingUtilites f = new FileHandlingUtilites();
@@ -25,6 +42,8 @@ namespace Netflix
         {
             resetEntries();
         }
+
+        // ? A Function That Acts As A Gate Keeper To Proceed Towards The Next Function
         private void login()
         {
             string ID = userIDBox.Text;
@@ -41,6 +60,8 @@ namespace Netflix
             userIDBox.Text = "";
             passwordBox.Text = "";
         }
+
+        // ? A Utility Funtion That Display The Input Is Right/Wrong
         private void setStatus(int statusNumber, bool setStatus, string message)
         {
             string imageLocation = Environment.CurrentDirectory + @"\Custom UI\UI Icons\";
@@ -113,6 +134,7 @@ namespace Netflix
             return false;
         }
 
+        // ? Consists Of ShortCut Keys In Password Input Box
         private void passwordBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -179,22 +201,6 @@ namespace Netflix
         private void pictureBox3_MouseLeave(object sender, EventArgs e)
         {
             pictureBox3.BackColor = Color.Transparent;
-        }
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        private void LoginForm_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
         }
 
     }

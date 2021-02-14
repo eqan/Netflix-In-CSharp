@@ -1,4 +1,10 @@
-﻿using System;
+﻿// * One Of The Major Highlights Of This Program
+/**
+    ** This Program Consists Of:
+    ** A Full Fledged Video Player With The Assistance Of SDK From AX Movie Player
+    ** Again Using The Recommendation System Here For Recommendations
+ */ 
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
@@ -8,6 +14,16 @@ namespace Netflix
 {
     public partial class VideoPlayer : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        Label label6;
+        bool isCollapsed = false;
+
         FileHandlingUtilites fileHandling = new FileHandlingUtilites();
         DoublyLinkedList circularLinkedList;
         string[] arr, fileDirectories, likedVideos;
@@ -16,6 +32,7 @@ namespace Netflix
         string currentMovie;
         bool playBackStatus, currentLikeStatus = false;
         string imageLocation = Environment.CurrentDirectory + @"\Custom UI\Video Player Icons\";
+
         public VideoPlayer(string userName, string accountName, string movieName, int index)
         {
             InitializeComponent();
@@ -296,15 +313,6 @@ namespace Netflix
             populate();
         }
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        Label label6;
-        bool isCollapsed = false;
         private void settingsBtn_Click(object sender, EventArgs e)
         {
             if (!isCollapsed)

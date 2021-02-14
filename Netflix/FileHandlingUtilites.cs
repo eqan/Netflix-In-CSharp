@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿/**
+    ** A Special Class Made For Handling Different Type Of File Handling Scenarios
+ */
+using System.IO;
 using System;
 
 namespace Netflix
@@ -166,7 +169,6 @@ namespace Netflix
             //Console.WriteLine("Total Size: " + numberOfLines);
             while (str != null)
             {
-                //Console.WriteLine(fileDirectories[numberOfFiles] + ".txt");
                 if (numberOfFiles == numberOfLines - 1)
                     break;
                 numberOfFiles++;
@@ -205,8 +207,6 @@ namespace Netflix
                 numberOfFiles = calculateContentSizeOfDirectories(srcFileDirectory, destFileDirectory, extension);
             int j = 0;
             string[] arr = new string[sizeOfArr];
-            //Console.WriteLine("Size of Arr:" + sizeOfArr);
-            //string tempString;
             for (int i = 0; i < numberOfFiles; i++)
             {
                 FileStream fs = new FileStream((fileDirectories[i] + extension), FileMode.Open, FileAccess.Read);
@@ -218,7 +218,6 @@ namespace Netflix
                 {
                     if (j == sizeOfArr)
                     {
-                        //Console.WriteLine(str);
                         break;
                     }
                     if ((str[0] >= 65 && str[0] <= 90) || (str[0] >= 97 && str[0] <= 122))
@@ -227,14 +226,9 @@ namespace Netflix
                         if (str != null)
                         {
                             arr[j] = str;
-                            //Console.WriteLine(arr[j]);
                             j++;
                         }
-                        //Console.WriteLine(arr[j]);
                     }
-                    /*                    if (str == tempString)
-                                            str = sr.ReadLine();
-                    */
                 }
                 sr.Close();
                 fs.Close();

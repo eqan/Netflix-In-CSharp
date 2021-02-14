@@ -11,6 +11,7 @@ namespace Netflix
         private string[] profiles;
         private string[] passwords;
         const int size = 5;
+
         public User1(string accountName) // ? Account Name is the Parent Account
         {
             InitializeComponent();

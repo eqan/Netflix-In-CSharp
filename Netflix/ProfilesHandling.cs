@@ -1,4 +1,5 @@
-﻿using System;
+﻿// * Handles The Profiles Of An Account
+using System;
 using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
@@ -7,11 +8,19 @@ namespace Netflix
 {
     public partial class ProfilesHandling : Form
     {
+        // ? Handles External User Interactions
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         static private int userCount = 0;
         private string currentAccount = "";
         private string[] profiles;
         private string[] passwords;
         const int size = 5;
+
+        // ? Handles External User Interactions
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -209,10 +218,6 @@ namespace Netflix
             else
                 MessageBox.Show("Incorrect Password!");
         }
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
         private void Form_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

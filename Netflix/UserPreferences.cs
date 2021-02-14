@@ -1,4 +1,5 @@
-﻿using System;
+﻿// * A Special Class That Deals With User Specified Preferences And Uses It For The Rest Of The Program
+using System;
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -6,6 +7,11 @@ namespace Netflix
 {
     public partial class UserPreferences : Form
     {
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         string fileDirectory, currentProfile, currentAccount;
         static int count = 0;
         const int totalOptions = 7, preferenceLimit = 4;
@@ -188,10 +194,6 @@ namespace Netflix
             f.Show();
         }
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
         private void Form_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

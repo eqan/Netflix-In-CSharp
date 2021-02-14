@@ -1,4 +1,5 @@
-﻿using System;
+﻿//* Special Class For Adding Feature For A New Type Of Button
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 

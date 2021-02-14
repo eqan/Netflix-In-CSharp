@@ -7,7 +7,16 @@ namespace Netflix
 {
     public partial class SearchBox : Form
     {
-        Label label2, label3, label4, label5;
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        Label label2, label3, label4, label5, label6;
+        bool isCollapsed = false;
         Hashing obj;
         string[] str;
         string ImageNewName = "", userName, accountName;
@@ -21,13 +30,6 @@ namespace Netflix
             str = new string[obj.size];
             this.userName = userName; this.accountName = accountName;
             this.profileIndex = index;
-            label3.BorderStyle = BorderStyle.Fixed3D;
-            label3.BackColor = Color.Red;
-            label3.Width = 0;
-            label3.Height = 5;
-            while (label3.Width != searchBtn.Width)
-                label3.Width += 1;
-            label3.BorderStyle = BorderStyle.None;
         }
 
 
@@ -123,6 +125,13 @@ namespace Netflix
         }
         void initializeLabels()
         {
+            label3.BorderStyle = BorderStyle.Fixed3D;
+            label3.BackColor = Color.Red;
+            label3.Width = 0;
+            label3.Height = 5;
+            while (label3.Width != searchBtn.Width)
+                label3.Width += 1;
+            label3.BorderStyle = BorderStyle.None;
             label2 = new Label();
             label2.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + 35);
             this.Controls.Add(label2);
@@ -146,13 +155,6 @@ namespace Netflix
 
         }
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
         private void Form_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -212,8 +214,6 @@ namespace Netflix
             AccountInfo f = new AccountInfo(userName, accountName, profileIndex);
             f.Show();
         }
-        Label label6;
-        bool isCollapsed = false;
         private void settingsBtn_Click(object sender, EventArgs e)
         {
             if (!isCollapsed)
@@ -255,6 +255,7 @@ namespace Netflix
             LoginForm f = new LoginForm();
             f.Show();
         }
+
         private void settingsBtn_MouseHover(object sender, EventArgs e)
         {
             if (!isCollapsed)
@@ -268,8 +269,6 @@ namespace Netflix
                 label6.BorderStyle = BorderStyle.None;
             }
         }
-
-
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {

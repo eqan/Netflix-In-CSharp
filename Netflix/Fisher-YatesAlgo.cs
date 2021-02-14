@@ -1,4 +1,8 @@
-﻿using System;
+﻿/**
+    ** A Special Algorithm Used For Netflix Recommendation System That Can Mimick The Behavior Of Youtube
+    ** Upon Preferences
+ */
+using System;
 
 namespace Netflix
 {

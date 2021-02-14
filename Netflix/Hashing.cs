@@ -1,4 +1,8 @@
-﻿using System;
+﻿/**
+    ** An Algorithm Used For Searching Capabilites Taking Minimal Time To Scrap Through And Search
+    ** The Content
+ */
+using System;
 namespace Netflix
 {
     public class Hashing
