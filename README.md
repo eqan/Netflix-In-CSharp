@@ -1,12 +1,28 @@
 # Netflix
 ### A Localized Netflix Clone Made In C#
 
+Utilizing the best of Algorithms, I have created this project on an experimental basis to discover the mechanism/possibilities of Technologies which somewhat covers the fundamentals of the Online Video streaming servies such as Youtube & Netflix.
+
+#### _Note: This Project Is Solely Made For Educational Purposes & Is Entirely Self Made, None Of This Has RelationShip Of Any Kind With Netflix Or Any Other Video Streaming Service_.
+
 ![Netflix Main Page](/ScreenShots/3.png)
 
 | Video Player         | Search Engine         | History   |
 |:-------------:|:-------------:|:-------------:|
 |![](/ScreenShots/9.png)|![](/ScreenShots/4.png)|![](/ScreenShots/5.png)|
 
-| Preferences         | User Handling         | History   |
+| Preferences         | User Handling         | SignUp/Login DataBaseSystem   |
 |:-------------:|:-------------:|:-------------:|
-|![](/ScreenShots/8.png)|![](/ScreenShots/7.png)|![](/ScreenShots/5.png)|
+|![](/ScreenShots/8.png)|![](/ScreenShots/7.png)|![](/ScreenShots/2.png)|
+
+> ## Installation & Debugging
+> 1. Download This Repo
+> 2. Install AX Movie Player SDK from Visual Studio Extension Market[You Need To Have Visual Studio To Edit & Debug]
+> 3. Debug This Project :)
+
+> ## General Usage
+> 1. Download This Repo
+> 2. Go to the Neflix directory & then follow this path
+> _Netflix\bin\Debug_
+> 3. Run the Netflix.exe
+
