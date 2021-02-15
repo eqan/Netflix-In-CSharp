@@ -20,6 +20,17 @@ Utilizing the best of Algorithms, I have created this project on an experimental
   Movie ThumbNail: Netflix\bin\Debug\Data\Movie Titles\Movie Icons\  
   Movie File: Netflix\bin\Debug\Data\Movie Titles\Movie Trailers\ </i>  
 
+> ## Features
+> - [x] Full Compact Video Player Using AX Movie Player SDK
+> - [x] Using Fisher Yates Algorithm For Recommendation System
+> - [x] Using Hashing Algorithm For Ultra Fast Search Results
+> - [x] Full localized Data Base System
+> - [x] Efficient Usage Of Data Structures & Algorithms
+
+> ## Future Prospects
+> - [ ] AES 256 Encryption For Passwords  
+> - [ ] Code Optimization  
+
 > ## Installation & Debugging
 > 1. Download This Repo
 > 2. Install AX Movie Player SDK from Visual Studio Extension Market[You Need To Have Visual Studio To Edit & Debug]
