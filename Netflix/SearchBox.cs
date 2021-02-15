@@ -125,6 +125,10 @@ namespace Netflix
         }
         void initializeLabels()
         {
+            label3 = new Label();
+            label3.Location = new Point(searchBtn.Location.X, searchBtn.Location.Y + 30);
+            this.Controls.Add(label3);
+            label3.BringToFront();
             label3.BorderStyle = BorderStyle.Fixed3D;
             label3.BackColor = Color.Red;
             label3.Width = 0;
@@ -136,10 +140,6 @@ namespace Netflix
             label2.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + 35);
             this.Controls.Add(label2);
             label2.BringToFront();
-            label3 = new Label();
-            label3.Location = new Point(searchBtn.Location.X, searchBtn.Location.Y + 30);
-            this.Controls.Add(label3);
-            label3.BringToFront();
             label4 = new Label();
             label4.Location = new Point(historyBtn.Location.X, historyBtn.Location.Y + 30);
             this.Controls.Add(label4);
