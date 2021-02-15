@@ -16,9 +16,9 @@ Utilizing the best of Algorithms, I have created this project on an experimental
 |![](/ScreenShots/8.png)|![](/ScreenShots/7.png)|![](/ScreenShots/2.png)|
 
 #### _Note: You need to paste your video/movie properties/files in these specified directory_
-  <i>Movie Name: Netflix\bin\Debug\Data\Movie Titles\(Genre).txt</i>  
-  <i>Movie ThumbNail: Netflix\bin\Debug\Data\Movie Titles\Movie Icons\  
-  <i>Movie File: Netflix\bin\Debug\Data\Movie Titles\Movie Trailers\  
+  <i> Movie Name: Netflix\bin\Debug\Data\Movie Titles\(Genre).txt  
+  Movie ThumbNail: Netflix\bin\Debug\Data\Movie Titles\Movie Icons\  
+  Movie File: Netflix\bin\Debug\Data\Movie Titles\Movie Trailers\ </i>  
 
 > ## Installation & Debugging
 > 1. Download This Repo
