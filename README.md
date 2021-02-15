@@ -15,6 +15,11 @@ Utilizing the best of Algorithms, I have created this project on an experimental
 |:-------------:|:-------------:|:-------------:|
 |![](/ScreenShots/8.png)|![](/ScreenShots/7.png)|![](/ScreenShots/2.png)|
 
+#### _Note: You need to paste your video/movie properties/files in these specified directory_
+  <i>Movie Name: Netflix\bin\Debug\Data\Movie Titles\(Genre).txt</i>  
+  <i>Movie ThumbNail: Netflix\bin\Debug\Data\Movie Titles\Movie Icons\  
+  <i>Movie File: Netflix\bin\Debug\Data\Movie Titles\Movie Trailers\  
+
 > ## Installation & Debugging
 > 1. Download This Repo
 > 2. Install AX Movie Player SDK from Visual Studio Extension Market[You Need To Have Visual Studio To Edit & Debug]
@@ -25,4 +30,3 @@ Utilizing the best of Algorithms, I have created this project on an experimental
 > 2. Go to the Neflix directory & then follow this path
 > _Netflix\bin\Debug_
 > 3. Run the Netflix.exe
-
