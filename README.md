@@ -21,6 +21,7 @@ Utilizing the best of Algorithms, I have created this project on an experimental
   Movie File: Netflix\bin\Debug\Data\Movie Titles\Movie Trailers\ </i>  
 
 > ## Features
+> - [x] Metro UI Design
 > - [x] Full Compact Video Player Using AX Movie Player SDK
 > - [x] Using Fisher Yates Algorithm For Recommendation System
 > - [x] Using Hashing Algorithm For Ultra Fast Search Results
