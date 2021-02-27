@@ -257,12 +257,10 @@ namespace Netflix
             if (intselectedindex >= 0)
             {
                 axMoviePlayer1.Stop();
-                this.Hide();
-                string selected = listView1.SelectedItems[0].Text;
+                currentMovie = listView1.SelectedItems[0].Text;
                 string fileDirectory = Environment.CurrentDirectory + @"\Data\Profiles\" + accountName + @"\" + userName + @"\Log.txt";
-                fileHandling.WriteData(fileDirectory, selected);
-                VideoPlayer j = new VideoPlayer(userName, accountName, selected, profileIndex);
-                j.Show();
+                fileHandling.WriteData(fileDirectory, currentMovie);
+                startMovie();
             }
         }
 
@@ -382,7 +380,7 @@ namespace Netflix
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (progressBar1.Value == axMoviePlayer1.Duration)
+            if (progressBar1.Value == (int)(axMoviePlayer1.Duration))
             {
                 object s = null;
                 EventArgs ef = null;
