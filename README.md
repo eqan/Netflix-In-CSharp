@@ -31,6 +31,8 @@ Utilizing the best of Algorithms, I have created this project on an experimental
 > ## Future Prospects
 > - [ ] AES 256 Encryption For Passwords  
 > - [ ] Code Optimization  
+> - [ ] Shortcut keys
+> - [ ] Simplifying Methods 
 
 > ## Installation & Debugging
 > 1. Download This Repo
