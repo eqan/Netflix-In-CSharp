@@ -1,4 +1,4 @@
-﻿// * One Of The Major Highlights Of This Program
+// * One Of The Major Highlights Of This Program
 /**
     ** This Program Consists Of:
     ** A Full Fledged Video Player With The Assistance Of SDK From AX Movie Player
