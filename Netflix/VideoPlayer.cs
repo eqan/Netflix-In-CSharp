@@ -35,18 +35,33 @@ namespace Netflix
 
         public VideoPlayer(string userName, string accountName, string movieName, int index)
         {
+            importAccountInformation(userName, accountName, index);
+            initalizeAppComponents();
+            initalizeMoviePlayer(movieName);
+            Method1();
+        }
+
+        public void importAccountInformation(string userName, string accountName, int profileIndex)
+        {
+            this.userName = userName; this.accountName = accountName;
+            this.profileIndex = profileIndex;
+        }
+
+        public void initalizeAppComponents()
+        {
             InitializeComponent();
             initializeLabels();
-            initializeAXMoviePlayerSettings();
             circularLinkedList = new DoublyLinkedList();
-            this.userName = userName; this.accountName = accountName;
-            this.profileIndex = index;
+            importLikedVideos();
+        }
+
+        public void initalizeMoviePlayer(string movieName)
+        {
+            initializeAXMoviePlayerSettings();
             currentMovie = movieName;
             playBackStatus = true;
             initalizeControlBar();
-            importLikedVideos();
             startMovie();
-            Method1();
         }
 
         void initializeLabels()
