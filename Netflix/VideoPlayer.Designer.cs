@@ -38,6 +38,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoPlayer));
             this.listView1 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.totalDuration = new System.Windows.Forms.TextBox();
+            this.currentDuration = new System.Windows.Forms.TextBox();
             this.volumeControl = new System.Windows.Forms.TrackBar();
             this.likeBtn = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,6 +53,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.likedVideosBtn = new System.Windows.Forms.PictureBox();
             this.menuItem1 = new System.Windows.Forms.Button();
             this.settingsBtn = new System.Windows.Forms.PictureBox();
             this.profileBtn = new System.Windows.Forms.PictureBox();
@@ -66,8 +69,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.axMoviePlayer1 = new AxMOVIEPLAYERLib.AxMoviePlayer();
-            this.currentDuration = new System.Windows.Forms.TextBox();
-            this.totalDuration = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.volumeControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likeBtn)).BeginInit();
@@ -79,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.playPauseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullScreenBtn)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.likedVideosBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).BeginInit();
@@ -120,6 +122,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(677, 74);
             this.panel1.TabIndex = 2;
+            // 
+            // totalDuration
+            // 
+            this.totalDuration.BackColor = System.Drawing.Color.Black;
+            this.totalDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.totalDuration.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDuration.ForeColor = System.Drawing.Color.White;
+            this.totalDuration.Location = new System.Drawing.Point(632, 0);
+            this.totalDuration.Name = "totalDuration";
+            this.totalDuration.Size = new System.Drawing.Size(45, 15);
+            this.totalDuration.TabIndex = 26;
+            this.totalDuration.Text = "00:00:00";
+            // 
+            // currentDuration
+            // 
+            this.currentDuration.BackColor = System.Drawing.Color.Black;
+            this.currentDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.currentDuration.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentDuration.ForeColor = System.Drawing.Color.White;
+            this.currentDuration.Location = new System.Drawing.Point(9, 0);
+            this.currentDuration.Name = "currentDuration";
+            this.currentDuration.Size = new System.Drawing.Size(45, 15);
+            this.currentDuration.TabIndex = 25;
+            this.currentDuration.Text = "00:00:00";
             // 
             // volumeControl
             // 
@@ -239,6 +265,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.likedVideosBtn);
             this.panel3.Controls.Add(this.menuItem1);
             this.panel3.Controls.Add(this.settingsBtn);
             this.panel3.Controls.Add(this.profileBtn);
@@ -250,6 +277,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 617);
             this.panel3.TabIndex = 19;
+            // 
+            // likedVideosBtn
+            // 
+            this.likedVideosBtn.Image = ((System.Drawing.Image)(resources.GetObject("likedVideosBtn.Image")));
+            this.likedVideosBtn.Location = new System.Drawing.Point(48, 369);
+            this.likedVideosBtn.Name = "likedVideosBtn";
+            this.likedVideosBtn.Size = new System.Drawing.Size(37, 26);
+            this.likedVideosBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.likedVideosBtn.TabIndex = 8;
+            this.likedVideosBtn.TabStop = false;
+            this.likedVideosBtn.Click += new System.EventHandler(this.likedVideosBtn_Click);
+            this.likedVideosBtn.MouseLeave += new System.EventHandler(this.likedVideosBtn_MouseLeave);
+            this.likedVideosBtn.MouseHover += new System.EventHandler(this.likedVideosBtn_MouseHover);
             // 
             // menuItem1
             // 
@@ -283,7 +323,7 @@
             // profileBtn
             // 
             this.profileBtn.Image = ((System.Drawing.Image)(resources.GetObject("profileBtn.Image")));
-            this.profileBtn.Location = new System.Drawing.Point(48, 366);
+            this.profileBtn.Location = new System.Drawing.Point(48, 424);
             this.profileBtn.Name = "profileBtn";
             this.profileBtn.Size = new System.Drawing.Size(37, 26);
             this.profileBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -296,7 +336,7 @@
             // historyBtn
             // 
             this.historyBtn.Image = ((System.Drawing.Image)(resources.GetObject("historyBtn.Image")));
-            this.historyBtn.Location = new System.Drawing.Point(48, 312);
+            this.historyBtn.Location = new System.Drawing.Point(48, 314);
             this.historyBtn.Name = "historyBtn";
             this.historyBtn.Size = new System.Drawing.Size(37, 27);
             this.historyBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -414,30 +454,6 @@
             this.axMoviePlayer1.Size = new System.Drawing.Size(677, 270);
             this.axMoviePlayer1.TabIndex = 0;
             // 
-            // currentDuration
-            // 
-            this.currentDuration.BackColor = System.Drawing.Color.Black;
-            this.currentDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.currentDuration.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentDuration.ForeColor = System.Drawing.Color.White;
-            this.currentDuration.Location = new System.Drawing.Point(9, 0);
-            this.currentDuration.Name = "currentDuration";
-            this.currentDuration.Size = new System.Drawing.Size(45, 15);
-            this.currentDuration.TabIndex = 25;
-            this.currentDuration.Text = "00:00:00";
-            // 
-            // totalDuration
-            // 
-            this.totalDuration.BackColor = System.Drawing.Color.Black;
-            this.totalDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.totalDuration.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalDuration.ForeColor = System.Drawing.Color.White;
-            this.totalDuration.Location = new System.Drawing.Point(632, 0);
-            this.totalDuration.Name = "totalDuration";
-            this.totalDuration.Size = new System.Drawing.Size(45, 15);
-            this.totalDuration.TabIndex = 26;
-            this.totalDuration.Text = "00:00:00";
-            // 
             // VideoPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +495,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.playPauseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullScreenBtn)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.likedVideosBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).EndInit();
@@ -517,7 +534,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox likeBtn;
         private System.Windows.Forms.Button menuItem1;
         private System.Windows.Forms.PictureBox settingsBtn;
@@ -525,5 +541,6 @@
         private System.Windows.Forms.TrackBar volumeControl;
         private System.Windows.Forms.TextBox totalDuration;
         private System.Windows.Forms.TextBox currentDuration;
+        private System.Windows.Forms.PictureBox likedVideosBtn;
     }
 }

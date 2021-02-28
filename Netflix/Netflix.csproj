@@ -59,6 +59,12 @@
     <Compile Include="DoublyLinkedList.cs" />
     <Compile Include="FileHandlingUtilites.cs" />
     <Compile Include="Fisher-YatesAlgo.cs" />
+    <Compile Include="LikedVideos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LikedVideos.Designer.cs">
+      <DependentUpon>LikedVideos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hashing.cs" />
     <Compile Include="History.cs">
       <SubType>Form</SubType>
@@ -135,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LikedVideos.resx">
+      <DependentUpon>LikedVideos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntroPage.resx">
       <DependentUpon>IntroPage.cs</DependentUpon>

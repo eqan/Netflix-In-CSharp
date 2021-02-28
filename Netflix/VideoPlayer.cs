@@ -21,8 +21,8 @@ namespace Netflix
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-        Label label6;
         bool isCollapsed = false;
+        Label label5, label6, label7;
 
         FileHandlingUtilites fileHandling = new FileHandlingUtilites();
         DoublyLinkedList circularLinkedList;
@@ -66,10 +66,18 @@ namespace Netflix
 
         void initializeLabels()
         {
+            label5 = new Label();
+            label5.Location = new Point(profileBtn.Location.X, profileBtn.Location.Y + 35);
+            this.Controls.Add(label5);
+            label5.BringToFront();
             label6 = new Label();
             label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
             this.Controls.Add(label6);
             label6.BringToFront();
+            label7 = new Label();
+            label7.Location = new Point(likedVideosBtn.Location.X, likedVideosBtn.Location.Y + 35);
+            this.Controls.Add(label7);
+            label7.BringToFront();
         }
 
         void initalizeControlBar()
@@ -109,15 +117,6 @@ namespace Netflix
             likedVideos = fileHandling.returnContent(srcFileDirectory);
         }
 
-        bool isVideoLiked(string currentVideo)
-        {
-            foreach (string video in likedVideos)
-            {
-                if (video == currentVideo)
-                    return true;
-            }
-            return false;
-        }
 
         void startMovie()
         {
@@ -406,35 +405,39 @@ namespace Netflix
             progressBar1.Increment(1);
         }
 
+
+        private void likedVideosBtn_Click(object sender, EventArgs e)
+        {
+            axMoviePlayer1.Stop();
+            this.Hide();
+            LikedVideos f = new LikedVideos(userName, accountName, profileIndex);
+            f.Show();
+        }
+
+        private void likedVideosBtn_MouseHover(object sender, EventArgs e)
+        {
+            label7.BorderStyle = BorderStyle.Fixed3D;
+            label7.BackColor = Color.Red;
+            label7.Width = 0;
+            label7.Height = 5;
+            while (label7.Width != homeBtn.Width)
+                label7.Width += 1;
+            label7.BorderStyle = BorderStyle.None;
+        }
+
+        private void likedVideosBtn_MouseLeave(object sender, EventArgs e)
+        {
+            label7.Width = 0;
+            label7.Height = 5;
+            label7.BackColor = Color.Transparent;
+        }
+
+
         private void homeBtn_Click(object sender, EventArgs e)
         {
             axMoviePlayer1.Stop();
             this.Hide();
             MainPage f = new MainPage(userName, accountName, profileIndex);
-            f.Show();
-        }
-
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-            axMoviePlayer1.Stop();
-            this.Hide();
-            SearchBox f = new SearchBox(userName, accountName, profileIndex);
-            f.Show();
-        }
-
-        private void historyBtn_Click(object sender, EventArgs e)
-        {
-            axMoviePlayer1.Stop();
-            this.Hide();
-            History f = new History(userName, accountName, profileIndex);
-            f.Show();
-        }
-
-        private void profileBtn_Click(object sender, EventArgs e)
-        {
-            axMoviePlayer1.Stop();
-            this.Hide();
-            SearchBox f = new SearchBox(userName, accountName, profileIndex);
             f.Show();
         }
 
@@ -456,6 +459,13 @@ namespace Netflix
             label2.BackColor = Color.Transparent;
         }
 
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            axMoviePlayer1.Stop();
+            this.Hide();
+            SearchBox f = new SearchBox(userName, accountName, profileIndex);
+            f.Show();
+        }
 
         private void searchBtn_MouseHover(object sender, EventArgs e)
         {
@@ -474,6 +484,14 @@ namespace Netflix
             label3.Height = 5;
             label3.BackColor = Color.Transparent;
         }
+        private void historyBtn_Click(object sender, EventArgs e)
+        {
+            axMoviePlayer1.Stop();
+            this.Hide();
+            History f = new History(userName, accountName, profileIndex);
+            f.Show();
+        }
+
 
         private void historyBtn_MouseHover(object sender, EventArgs e)
         {
@@ -493,6 +511,14 @@ namespace Netflix
             label4.BackColor = Color.Transparent;
         }
 
+        private void profileBtn_Click(object sender, EventArgs e)
+        {
+            axMoviePlayer1.Stop();
+            this.Hide();
+            SearchBox f = new SearchBox(userName, accountName, profileIndex);
+            f.Show();
+        }
+
         private void profileBtn_MouseHover(object sender, EventArgs e)
         {
             label5.BorderStyle = BorderStyle.Fixed3D;
@@ -502,6 +528,12 @@ namespace Netflix
             while (label5.Width != searchBtn.Width)
                 label5.Width += 1;
             label5.BorderStyle = BorderStyle.None;
+        }
+        private void profileBtn_MouseLeave(object sender, EventArgs e)
+        {
+            label5.Width = 0;
+            label5.Height = 5;
+            label5.BackColor = Color.Transparent;
         }
 
         private void likeBtn_Click(object sender, EventArgs e)
@@ -519,6 +551,15 @@ namespace Netflix
                 File.WriteAllLines(srcFileDirectory, File.ReadAllLines(srcFileDirectory).Skip(1));
             }
         }
+        bool isVideoLiked(string currentVideo)
+        {
+            foreach (string video in likedVideos)
+            {
+                if (video == currentVideo)
+                    return true;
+            }
+            return false;
+        }
 
         private void likeON()
         {
@@ -534,12 +575,6 @@ namespace Netflix
             likeBtn.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
-        private void profileBtn_MouseLeave(object sender, EventArgs e)
-        {
-            label5.Width = 0;
-            label5.Height = 5;
-            label5.BackColor = Color.Transparent;
-        }
 
         private void pictureBox3_MouseHover(object sender, EventArgs e)
         {

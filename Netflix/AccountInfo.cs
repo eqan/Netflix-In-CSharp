@@ -29,7 +29,7 @@ namespace Netflix
         }
 
         // ? Labels Made For Transition Effects While Hovering Or Selected
-        Label label2, label3, label4, label5, label6;
+        Label label2, label3, label4, label5, label6, label8;
         string userName, accountName;
         int profileIndex = 1, numberOfVideos;
         bool isCollapsed = false;
@@ -68,18 +68,23 @@ namespace Netflix
             label4.BringToFront();
             label5 = new Label();
             label5.Location = new Point(profileBtn.Location.X, profileBtn.Location.Y + 30);
-            this.Controls.Add(label5);
-            label5.BringToFront();
             label5.BorderStyle = BorderStyle.Fixed3D;
             label5.BackColor = Color.Red;
             label5.Width = 0;
             label5.Height = 5;
             label5.Width = searchBtn.Width;
             label5.BorderStyle = BorderStyle.None;
+            this.Controls.Add(label5);
+            label5.BringToFront();
             label6 = new Label();
             label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
             this.Controls.Add(label6);
             label6.BringToFront();
+            label8 = new Label();
+            label8.Location = new Point(likedVideosBtn.Location.X, likedVideosBtn.Location.Y + 35);
+            this.Controls.Add(label8);
+            label8.BringToFront();
+
         }
 
         void importInformation()
@@ -184,6 +189,31 @@ namespace Netflix
             this.Hide();
             LoginForm f = new LoginForm();
             f.Show();
+        }
+
+        private void likedVideosBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LikedVideos f = new LikedVideos(userName, accountName, profileIndex);
+            f.Show();
+        }
+
+        private void likedVideosBtn_MouseHover(object sender, EventArgs e)
+        {
+            label8.BorderStyle = BorderStyle.Fixed3D;
+            label8.BackColor = Color.Red;
+            label8.Width = 0;
+            label8.Height = 5;
+            while (label8.Width != homeBtn.Width)
+                label8.Width += 1;
+            label8.BorderStyle = BorderStyle.None;
+        }
+
+        private void likedVideosBtn_MouseLeave(object sender, EventArgs e)
+        {
+            label8.Width = 0;
+            label8.Height = 5;
+            label8.BackColor = Color.Transparent;
         }
 
         private void settingsBtn_MouseHover(object sender, EventArgs e)

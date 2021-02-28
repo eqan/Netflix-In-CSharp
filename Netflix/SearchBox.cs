@@ -15,7 +15,7 @@ namespace Netflix
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        Label label2, label3, label4, label5, label6;
+        Label label2, label3, label4, label5, label6, label7;
         bool isCollapsed = false;
         Hashing obj;
         string[] str;
@@ -152,7 +152,10 @@ namespace Netflix
             label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
             this.Controls.Add(label6);
             label6.BringToFront();
-
+            label7 = new Label();
+            label7.Location = new Point(likedVideosBtn.Location.X, likedVideosBtn.Location.Y + 35);
+            this.Controls.Add(label7);
+            label7.BringToFront();
         }
 
         private void Form_MouseDown(object sender, MouseEventArgs e)
@@ -187,12 +190,6 @@ namespace Netflix
         }
 
 
-        private void homeBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainPage f = new MainPage(userName, accountName, profileIndex);
-            f.Show();
-        }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
@@ -201,19 +198,7 @@ namespace Netflix
             f.Show();
         }
 
-        private void historyBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            History f = new History(userName, accountName, profileIndex);
-            f.Show();
-        }
 
-        private void profileBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AccountInfo f = new AccountInfo(userName, accountName, profileIndex);
-            f.Show();
-        }
         private void settingsBtn_Click(object sender, EventArgs e)
         {
             if (!isCollapsed)
@@ -247,6 +232,31 @@ namespace Netflix
                 label6.Height = 5;
                 label6.BackColor = Color.Transparent;
             }
+        }
+
+        private void likedVideosBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LikedVideos f = new LikedVideos(userName, accountName, profileIndex);
+            f.Show();
+        }
+
+        private void likedVideosBtn_MouseHover(object sender, EventArgs e)
+        {
+            label7.BorderStyle = BorderStyle.Fixed3D;
+            label7.BackColor = Color.Red;
+            label7.Width = 0;
+            label7.Height = 5;
+            while (label7.Width != homeBtn.Width)
+                label7.Width += 1;
+            label7.BorderStyle = BorderStyle.None;
+        }
+
+        private void likedVideosBtn_MouseLeave(object sender, EventArgs e)
+        {
+            label7.Width = 0;
+            label7.Height = 5;
+            label7.BackColor = Color.Transparent;
         }
 
         private void menuItem1_Click(object sender, EventArgs e)
@@ -284,6 +294,13 @@ namespace Netflix
             textBox1.Text = " Search";
         }
 
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainPage f = new MainPage(userName, accountName, profileIndex);
+            f.Show();
+        }
+
         private void homeBtn_MouseHover(object sender, EventArgs e)
         {
             label2.BorderStyle = BorderStyle.Fixed3D;
@@ -303,6 +320,13 @@ namespace Netflix
         }
 
 
+        private void historyBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            History f = new History(userName, accountName, profileIndex);
+            f.Show();
+        }
+
         private void historyBtn_MouseHover(object sender, EventArgs e)
         {
             label4.BorderStyle = BorderStyle.Fixed3D;
@@ -319,6 +343,12 @@ namespace Netflix
             label4.Width = 0;
             label4.Height = 5;
             label4.BackColor = Color.Transparent;
+        }
+        private void profileBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AccountInfo f = new AccountInfo(userName, accountName, profileIndex);
+            f.Show();
         }
 
         private void profileBtn_MouseHover(object sender, EventArgs e)

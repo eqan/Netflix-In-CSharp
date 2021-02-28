@@ -30,3 +30,4 @@ E:\C++\Netflix\Netflix\obj\Debug\Netflix.csproj.CopyComplete
 E:\C++\Netflix\Netflix\obj\Debug\Netflix.exe
 E:\C++\Netflix\Netflix\obj\Debug\Netflix.pdb
 E:\C++\Netflix\Netflix\obj\Debug\Netflix.csprojAssemblyReference.cache
+E:\C++\Netflix\Netflix\obj\Debug\Netflix.LikedVideos.resources

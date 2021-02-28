@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountInfo));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.profileBtn = new System.Windows.Forms.PictureBox();
-            this.menuItem1 = new System.Windows.Forms.Button();
-            this.historyBtn = new System.Windows.Forms.PictureBox();
-            this.settingsBtn = new System.Windows.Forms.PictureBox();
-            this.searchBtn = new System.Windows.Forms.PictureBox();
-            this.homeBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,109 +36,24 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.accountLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.likedVideosBtn = new System.Windows.Forms.PictureBox();
+            this.menuItem1 = new System.Windows.Forms.Button();
+            this.settingsBtn = new System.Windows.Forms.PictureBox();
+            this.profileBtn = new System.Windows.Forms.PictureBox();
+            this.historyBtn = new System.Windows.Forms.PictureBox();
+            this.searchBtn = new System.Windows.Forms.PictureBox();
+            this.homeBtn = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.likedVideosBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.profileBtn);
-            this.panel3.Controls.Add(this.menuItem1);
-            this.panel3.Controls.Add(this.historyBtn);
-            this.panel3.Controls.Add(this.settingsBtn);
-            this.panel3.Controls.Add(this.searchBtn);
-            this.panel3.Controls.Add(this.homeBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(114, 450);
-            this.panel3.TabIndex = 20;
-            // 
-            // profileBtn
-            // 
-            this.profileBtn.Image = ((System.Drawing.Image)(resources.GetObject("profileBtn.Image")));
-            this.profileBtn.Location = new System.Drawing.Point(48, 287);
-            this.profileBtn.Name = "profileBtn";
-            this.profileBtn.Size = new System.Drawing.Size(37, 26);
-            this.profileBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.profileBtn.TabIndex = 3;
-            this.profileBtn.TabStop = false;
-            this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
-            // 
-            // menuItem1
-            // 
-            this.menuItem1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuItem1.FlatAppearance.BorderSize = 0;
-            this.menuItem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuItem1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuItem1.ForeColor = System.Drawing.Color.White;
-            this.menuItem1.Location = new System.Drawing.Point(36, 374);
-            this.menuItem1.Name = "menuItem1";
-            this.menuItem1.Size = new System.Drawing.Size(0, 0);
-            this.menuItem1.TabIndex = 5;
-            this.menuItem1.UseVisualStyleBackColor = false;
-            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
-            // 
-            // historyBtn
-            // 
-            this.historyBtn.Image = ((System.Drawing.Image)(resources.GetObject("historyBtn.Image")));
-            this.historyBtn.Location = new System.Drawing.Point(48, 233);
-            this.historyBtn.Name = "historyBtn";
-            this.historyBtn.Size = new System.Drawing.Size(37, 27);
-            this.historyBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.historyBtn.TabIndex = 2;
-            this.historyBtn.TabStop = false;
-            this.historyBtn.Click += new System.EventHandler(this.historyBtn_Click);
-            this.historyBtn.MouseLeave += new System.EventHandler(this.historyBtn_MouseLeave);
-            this.historyBtn.MouseHover += new System.EventHandler(this.historyBtn_MouseHover);
-            // 
-            // settingsBtn
-            // 
-            this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
-            this.settingsBtn.Location = new System.Drawing.Point(36, 402);
-            this.settingsBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Padding = new System.Windows.Forms.Padding(0, 50, 0, 50);
-            this.settingsBtn.Size = new System.Drawing.Size(66, 26);
-            this.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.settingsBtn.TabIndex = 4;
-            this.settingsBtn.TabStop = false;
-            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
-            this.settingsBtn.MouseLeave += new System.EventHandler(this.settingsBtn_MouseLeave);
-            this.settingsBtn.MouseHover += new System.EventHandler(this.settingsBtn_MouseHover);
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Image = ((System.Drawing.Image)(resources.GetObject("searchBtn.Image")));
-            this.searchBtn.Location = new System.Drawing.Point(48, 181);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(37, 25);
-            this.searchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.searchBtn.TabIndex = 1;
-            this.searchBtn.TabStop = false;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            this.searchBtn.MouseLeave += new System.EventHandler(this.searchBtn_MouseLeave);
-            this.searchBtn.MouseHover += new System.EventHandler(this.searchBtn_MouseHover);
-            // 
-            // homeBtn
-            // 
-            this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
-            this.homeBtn.Location = new System.Drawing.Point(48, 123);
-            this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(37, 27);
-            this.homeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.homeBtn.TabIndex = 0;
-            this.homeBtn.TabStop = false;
-            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
-            this.homeBtn.MouseLeave += new System.EventHandler(this.homeBtn_MouseLeave);
-            this.homeBtn.MouseHover += new System.EventHandler(this.homeBtn_MouseHover);
             // 
             // pictureBox3
             // 
@@ -218,12 +126,121 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Account:";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.likedVideosBtn);
+            this.panel3.Controls.Add(this.menuItem1);
+            this.panel3.Controls.Add(this.settingsBtn);
+            this.panel3.Controls.Add(this.profileBtn);
+            this.panel3.Controls.Add(this.historyBtn);
+            this.panel3.Controls.Add(this.searchBtn);
+            this.panel3.Controls.Add(this.homeBtn);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(114, 450);
+            this.panel3.TabIndex = 30;
+            // 
+            // likedVideosBtn
+            // 
+            this.likedVideosBtn.Image = ((System.Drawing.Image)(resources.GetObject("likedVideosBtn.Image")));
+            this.likedVideosBtn.Location = new System.Drawing.Point(43, 251);
+            this.likedVideosBtn.Name = "likedVideosBtn";
+            this.likedVideosBtn.Size = new System.Drawing.Size(37, 26);
+            this.likedVideosBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.likedVideosBtn.TabIndex = 8;
+            this.likedVideosBtn.TabStop = false;
+            this.likedVideosBtn.Click += new System.EventHandler(this.likedVideosBtn_Click);
+            this.likedVideosBtn.MouseLeave += new System.EventHandler(this.likedVideosBtn_MouseLeave);
+            this.likedVideosBtn.MouseHover += new System.EventHandler(this.likedVideosBtn_MouseHover);
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.menuItem1.FlatAppearance.BorderSize = 0;
+            this.menuItem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuItem1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuItem1.ForeColor = System.Drawing.Color.White;
+            this.menuItem1.Location = new System.Drawing.Point(26, 379);
+            this.menuItem1.Name = "menuItem1";
+            this.menuItem1.Size = new System.Drawing.Size(0, 0);
+            this.menuItem1.TabIndex = 7;
+            this.menuItem1.UseVisualStyleBackColor = false;
+            this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
+            this.settingsBtn.Location = new System.Drawing.Point(26, 407);
+            this.settingsBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Padding = new System.Windows.Forms.Padding(0, 50, 0, 50);
+            this.settingsBtn.Size = new System.Drawing.Size(66, 26);
+            this.settingsBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.settingsBtn.TabIndex = 6;
+            this.settingsBtn.TabStop = false;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            this.settingsBtn.MouseLeave += new System.EventHandler(this.settingsBtn_MouseLeave);
+            this.settingsBtn.MouseHover += new System.EventHandler(this.settingsBtn_MouseHover);
+            // 
+            // profileBtn
+            // 
+            this.profileBtn.Image = ((System.Drawing.Image)(resources.GetObject("profileBtn.Image")));
+            this.profileBtn.Location = new System.Drawing.Point(43, 306);
+            this.profileBtn.Name = "profileBtn";
+            this.profileBtn.Size = new System.Drawing.Size(37, 26);
+            this.profileBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.profileBtn.TabIndex = 3;
+            this.profileBtn.TabStop = false;
+            this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
+            // 
+            // historyBtn
+            // 
+            this.historyBtn.Image = ((System.Drawing.Image)(resources.GetObject("historyBtn.Image")));
+            this.historyBtn.Location = new System.Drawing.Point(43, 196);
+            this.historyBtn.Name = "historyBtn";
+            this.historyBtn.Size = new System.Drawing.Size(37, 27);
+            this.historyBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.historyBtn.TabIndex = 2;
+            this.historyBtn.TabStop = false;
+            this.historyBtn.Click += new System.EventHandler(this.historyBtn_Click);
+            this.historyBtn.MouseLeave += new System.EventHandler(this.historyBtn_MouseLeave);
+            this.historyBtn.MouseHover += new System.EventHandler(this.historyBtn_MouseHover);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Image = ((System.Drawing.Image)(resources.GetObject("searchBtn.Image")));
+            this.searchBtn.Location = new System.Drawing.Point(43, 144);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(37, 25);
+            this.searchBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.searchBtn.TabIndex = 1;
+            this.searchBtn.TabStop = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            this.searchBtn.MouseLeave += new System.EventHandler(this.searchBtn_MouseLeave);
+            this.searchBtn.MouseHover += new System.EventHandler(this.searchBtn_MouseHover);
+            // 
+            // homeBtn
+            // 
+            this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
+            this.homeBtn.Location = new System.Drawing.Point(43, 86);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(37, 27);
+            this.homeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.homeBtn.TabIndex = 0;
+            this.homeBtn.TabStop = false;
+            this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
+            this.homeBtn.MouseLeave += new System.EventHandler(this.homeBtn_MouseLeave);
+            this.homeBtn.MouseHover += new System.EventHandler(this.homeBtn_MouseHover);
+            // 
             // AccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.accountLabel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.nameLabel);
@@ -231,33 +248,27 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AccountInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccountInfo";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.likedVideosBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.settingsBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profileBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox profileBtn;
-        private System.Windows.Forms.PictureBox historyBtn;
-        private System.Windows.Forms.PictureBox searchBtn;
-        private System.Windows.Forms.PictureBox homeBtn;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
@@ -265,7 +276,13 @@
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label accountLabel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox settingsBtn;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox likedVideosBtn;
         private System.Windows.Forms.Button menuItem1;
+        private System.Windows.Forms.PictureBox settingsBtn;
+        private System.Windows.Forms.PictureBox profileBtn;
+        private System.Windows.Forms.PictureBox historyBtn;
+        private System.Windows.Forms.PictureBox searchBtn;
+        private System.Windows.Forms.PictureBox homeBtn;
     }
 }

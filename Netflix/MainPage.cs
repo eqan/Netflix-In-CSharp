@@ -22,7 +22,7 @@ namespace Netflix
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         // ? Labels Made For Transition Effects While Hovering Or Selected
-        Label label2, label3, label4, label5;
+        Label label2, label3, label4, label5, label6, label7;
         FileHandlingUtilites fileHandling = new FileHandlingUtilites();
         Stack stack;
         string ImageNewName = "";
@@ -231,7 +231,10 @@ namespace Netflix
             label6.Location = new Point(settingsBtn.Location.X, settingsBtn.Location.Y + 35);
             this.Controls.Add(label6);
             label6.BringToFront();
-
+            label7 = new Label();
+            label7.Location = new Point(likedVideosBtn.Location.X, likedVideosBtn.Location.Y + 35);
+            this.Controls.Add(label7);
+            label7.BringToFront();
         }
         private void Form_MouseDown(object sender, MouseEventArgs e)
         {
@@ -285,8 +288,32 @@ namespace Netflix
             AccountInfo f = new AccountInfo(userName, accountName, profileIndex);
             f.Show();
         }
+        private void likedVideosBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LikedVideos f = new LikedVideos(userName, accountName, profileIndex);
+            f.Show();
+        }
 
-        Label label6;
+        private void likedVideosBtn_MouseHover(object sender, EventArgs e)
+        {
+            label7.BorderStyle = BorderStyle.Fixed3D;
+            label7.BackColor = Color.Red;
+            label7.Width = 0;
+            label7.Height = 5;
+            while (label7.Width != homeBtn.Width)
+                label7.Width += 1;
+            label7.BorderStyle = BorderStyle.None;
+        }
+
+        private void likedVideosBtn_MouseLeave(object sender, EventArgs e)
+        {
+            label7.Width = 0;
+            label7.Height = 5;
+            label7.BackColor = Color.Transparent;
+        }
+
+
         bool isCollapsed = false;
 
 
