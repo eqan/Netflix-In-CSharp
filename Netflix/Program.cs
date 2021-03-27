@@ -13,8 +13,7 @@ namespace Netflix
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new IntroPage());
-            Application.Run(new LikedVideos("123", "eqan123", 0));
+            Application.Run(new IntroPage());
         }
     }
 }
