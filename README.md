@@ -1,7 +1,7 @@
 # Netflix
 ### A Localized Netflix Clone Made In C#
 
-Utilizing the best of Algorithms, I have created this project on an experimental basis to discover the mechanism/possibilities of Technologies which somewhat covers the fundamentals of the Online Video streaming servies such as Youtube & Netflix.
+Utilizing the best of Algorithms, I have created this project on an experimental basis to discover the mechanism/possibilities of Technologies which somewhat covers the fundamentals of the Online Video streaming services such as Youtube & Netflix.
 
 #### _Note: This Project Is Solely Made For Educational Purposes & Is Entirely Self Made, None Of This Has RelationShip Of Any Kind With Netflix Or Any Other Video Streaming Service_.
 
