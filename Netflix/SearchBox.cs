@@ -16,7 +16,7 @@ namespace Netflix
         public static extern bool ReleaseCapture();
 
         Label label2, label3, label4, label5, label6, label7;
-        bool isCollapsed = false;
+        bool isCollapsed = false, isMaximized = false;
         Hashing obj;
         string[] str;
         string ImageNewName = "", userName, accountName;
@@ -167,29 +167,12 @@ namespace Netflix
             }
         }
 
-        private void pictureBox3_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Red;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Transparent;
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Hide();
             IntroPage f = new IntroPage();
             f.Show();
         }
-
-
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
@@ -317,6 +300,60 @@ namespace Netflix
             label2.Width = 0;
             label2.Height = 5;
             label2.BackColor = Color.Transparent;
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void maximizeBtn_Click(object sender, EventArgs e)
+        {
+            if (!isMaximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                isMaximized = true;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                isMaximized = false;
+            }
+        }
+
+        private void minimizebtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Close_MouseHover(object sender, EventArgs e)
+        {
+            Close.BackColor = Color.Red;
+        }
+
+        private void Close_MouseLeave(object sender, EventArgs e)
+        {
+            Close.BackColor = Color.Black;
+        }
+
+        private void Maximize_MouseHover(object sender, EventArgs e)
+        {
+            Maximize.BackColor = Color.DodgerBlue;
+        }
+
+        private void Maximize_MouseLeave(object sender, EventArgs e)
+        {
+            Maximize.BackColor = Color.Black;
+        }
+
+        private void Minimize_MouseHover(object sender, EventArgs e)
+        {
+            Minimize.BackColor = Color.DodgerBlue;
+        }
+
+        private void Minimize_MouseLeave(object sender, EventArgs e)
+        {
+            Minimize.BackColor = Color.Black;
         }
 
 

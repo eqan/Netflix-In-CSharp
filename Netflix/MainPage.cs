@@ -29,6 +29,7 @@ namespace Netflix
         int count = 0, profileIndex = 0, posterIndex = 0;
         string[] arr, fileDirectories, posterArr;
         private string userName = "", accountName = "";
+        bool isMaximized = false;
         public MainPage(string userName, string accountName, int index)
         {
             InitializeComponent();
@@ -244,20 +245,58 @@ namespace Netflix
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-        private void pictureBox3_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Red;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Transparent;
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void closebtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void maximizeBtn_Click(object sender, EventArgs e)
+        {
+            if (!isMaximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                isMaximized = true;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                isMaximized = false;
+            }
+        }
+
+        private void minimizebtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Close_MouseHover(object sender, EventArgs e)
+        {
+            Close.BackColor = Color.Red;
+        }
+
+        private void Close_MouseLeave(object sender, EventArgs e)
+        {
+            Close.BackColor = Color.Black;
+        }
+
+        private void Maximize_MouseHover(object sender, EventArgs e)
+        {
+            Maximize.BackColor = Color.DodgerBlue;
+        }
+
+        private void Maximize_MouseLeave(object sender, EventArgs e)
+        {
+            Maximize.BackColor = Color.Black;
+        }
+
+        private void Minimize_MouseHover(object sender, EventArgs e)
+        {
+            Minimize.BackColor = Color.DodgerBlue;
+        }
+
+        private void Minimize_MouseLeave(object sender, EventArgs e)
+        {
+            Minimize.BackColor = Color.Black;
         }
 
         private void homeBtn_Click(object sender, EventArgs e)

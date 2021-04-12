@@ -13,7 +13,6 @@ namespace Netflix
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-
         LinkedList linkedList = new LinkedList();
         public SignUP()
         {
@@ -259,19 +258,19 @@ namespace Netflix
             confirmPasswordBox.BorderStyle = BorderStyle.None;
         }
 
-        private void pictureBox3_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Red;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Transparent;
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void closebtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Close_MouseHover(object sender, EventArgs e)
+        {
+            Close.BackColor = Color.Red;
+        }
+
+        private void Close_MouseLeave(object sender, EventArgs e)
+        {
+            Close.BackColor = Color.Black;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

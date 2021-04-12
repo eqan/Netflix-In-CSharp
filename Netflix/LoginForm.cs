@@ -195,12 +195,12 @@ namespace Netflix
         }
         private void pictureBox3_MouseHover(object sender, EventArgs e)
         {
-            pictureBox3.BackColor = Color.Red;
+            closeBtn.BackColor = Color.Red;
         }
 
         private void pictureBox3_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox3.BackColor = Color.Transparent;
+            closeBtn.BackColor = Color.Transparent;
         }
 
     }

@@ -61,7 +61,6 @@
             this.searchBtn = new System.Windows.Forms.PictureBox();
             this.homeBtn = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
@@ -69,6 +68,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.axMoviePlayer1 = new AxMOVIEPLAYERLib.AxMoviePlayer();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Close = new System.Windows.Forms.PictureBox();
+            this.Maximize = new System.Windows.Forms.PictureBox();
+            this.Minimize = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.volumeControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.likeBtn)).BeginInit();
@@ -87,12 +90,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMoviePlayer1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.Color.Black;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,6 +116,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.totalDuration);
             this.panel1.Controls.Add(this.currentDuration);
             this.panel1.Controls.Add(this.volumeControl);
@@ -120,11 +129,13 @@
             this.panel1.Controls.Add(this.playPauseBtn);
             this.panel1.Location = new System.Drawing.Point(111, 414);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(677, 74);
+            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.panel1.Size = new System.Drawing.Size(680, 74);
             this.panel1.TabIndex = 2;
             // 
             // totalDuration
             // 
+            this.totalDuration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.totalDuration.BackColor = System.Drawing.Color.Black;
             this.totalDuration.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.totalDuration.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,6 +160,7 @@
             // 
             // volumeControl
             // 
+            this.volumeControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.volumeControl.AutoSize = false;
             this.volumeControl.Location = new System.Drawing.Point(550, 19);
             this.volumeControl.Maximum = 10000;
@@ -160,6 +172,7 @@
             // 
             // likeBtn
             // 
+            this.likeBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.likeBtn.Location = new System.Drawing.Point(57, 8);
             this.likeBtn.Name = "likeBtn";
             this.likeBtn.Size = new System.Drawing.Size(74, 38);
@@ -169,6 +182,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.volumePercentage);
             this.panel2.Location = new System.Drawing.Point(570, 47);
             this.panel2.Name = "panel2";
@@ -188,6 +202,7 @@
             // 
             // nextBtn
             // 
+            this.nextBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nextBtn.Location = new System.Drawing.Point(457, 8);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(74, 38);
@@ -197,6 +212,7 @@
             // 
             // previousBtn
             // 
+            this.previousBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.previousBtn.Location = new System.Drawing.Point(137, 8);
             this.previousBtn.Name = "previousBtn";
             this.previousBtn.Size = new System.Drawing.Size(74, 38);
@@ -206,6 +222,7 @@
             // 
             // reverseBtn
             // 
+            this.reverseBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.reverseBtn.Location = new System.Drawing.Point(217, 8);
             this.reverseBtn.Name = "reverseBtn";
             this.reverseBtn.Size = new System.Drawing.Size(74, 38);
@@ -215,6 +232,7 @@
             // 
             // fastForwardBtn
             // 
+            this.fastForwardBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fastForwardBtn.Location = new System.Drawing.Point(377, 8);
             this.fastForwardBtn.Name = "fastForwardBtn";
             this.fastForwardBtn.Size = new System.Drawing.Size(74, 38);
@@ -224,6 +242,7 @@
             // 
             // playPauseBtn
             // 
+            this.playPauseBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.playPauseBtn.Location = new System.Drawing.Point(297, 8);
             this.playPauseBtn.Name = "playPauseBtn";
             this.playPauseBtn.Size = new System.Drawing.Size(74, 38);
@@ -233,6 +252,7 @@
             // 
             // fullScreenBtn
             // 
+            this.fullScreenBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fullScreenBtn.BackColor = System.Drawing.Color.Transparent;
             this.fullScreenBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.fullScreenBtn.Location = new System.Drawing.Point(794, 340);
@@ -244,6 +264,7 @@
             // 
             // titleLabel
             // 
+            this.titleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("XXII DONT-MESS-WITH-VIKINGS", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
@@ -255,6 +276,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Location = new System.Drawing.Point(364, 82);
@@ -264,6 +286,8 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.likedVideosBtn);
             this.panel3.Controls.Add(this.menuItem1);
@@ -272,7 +296,6 @@
             this.panel3.Controls.Add(this.historyBtn);
             this.panel3.Controls.Add(this.searchBtn);
             this.panel3.Controls.Add(this.homeBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 617);
@@ -383,21 +406,9 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(812, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 31);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
-            this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
-            // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(120, 387);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(668, 21);
@@ -447,6 +458,8 @@
             // 
             // axMoviePlayer1
             // 
+            this.axMoviePlayer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.axMoviePlayer1.Enabled = true;
             this.axMoviePlayer1.Location = new System.Drawing.Point(111, 104);
             this.axMoviePlayer1.Name = "axMoviePlayer1";
@@ -454,18 +467,68 @@
             this.axMoviePlayer1.Size = new System.Drawing.Size(677, 270);
             this.axMoviePlayer1.TabIndex = 0;
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.Close);
+            this.panel4.Controls.Add(this.Maximize);
+            this.panel4.Controls.Add(this.Minimize);
+            this.panel4.Location = new System.Drawing.Point(730, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(141, 26);
+            this.panel4.TabIndex = 36;
+            // 
+            // Close
+            // 
+            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
+            this.Close.Location = new System.Drawing.Point(96, 0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(45, 23);
+            this.Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Close.TabIndex = 26;
+            this.Close.TabStop = false;
+            this.Close.Click += new System.EventHandler(this.closebtn_Click);
+            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
+            this.Close.MouseHover += new System.EventHandler(this.Close_MouseHover);
+            // 
+            // Maximize
+            // 
+            this.Maximize.Image = ((System.Drawing.Image)(resources.GetObject("Maximize.Image")));
+            this.Maximize.Location = new System.Drawing.Point(52, 0);
+            this.Maximize.Name = "Maximize";
+            this.Maximize.Size = new System.Drawing.Size(44, 23);
+            this.Maximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Maximize.TabIndex = 27;
+            this.Maximize.TabStop = false;
+            this.Maximize.Click += new System.EventHandler(this.maximizeBtn_Click);
+            this.Maximize.MouseLeave += new System.EventHandler(this.Maximize_MouseLeave);
+            this.Maximize.MouseHover += new System.EventHandler(this.Maximize_MouseHover);
+            // 
+            // Minimize
+            // 
+            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
+            this.Minimize.Location = new System.Drawing.Point(8, 0);
+            this.Minimize.Name = "Minimize";
+            this.Minimize.Size = new System.Drawing.Size(44, 23);
+            this.Minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Minimize.TabIndex = 28;
+            this.Minimize.TabStop = false;
+            this.Minimize.Click += new System.EventHandler(this.minimizebtn_Click);
+            this.Minimize.MouseLeave += new System.EventHandler(this.Minimize_MouseLeave);
+            this.Minimize.MouseHover += new System.EventHandler(this.Minimize_MouseHover);
+            // 
             // VideoPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(872, 617);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
@@ -502,8 +565,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axMoviePlayer1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,7 +594,6 @@
         private System.Windows.Forms.PictureBox searchBtn;
         private System.Windows.Forms.PictureBox homeBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
@@ -542,5 +607,9 @@
         private System.Windows.Forms.TextBox totalDuration;
         private System.Windows.Forms.TextBox currentDuration;
         private System.Windows.Forms.PictureBox likedVideosBtn;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox Close;
+        private System.Windows.Forms.PictureBox Maximize;
+        private System.Windows.Forms.PictureBox Minimize;
     }
 }

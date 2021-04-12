@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.listView1 = new System.Windows.Forms.ListView();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -49,7 +48,10 @@
             this.historyBtn = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.PictureBox();
             this.homeBtn = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Close = new System.Windows.Forms.PictureBox();
+            this.Maximize = new System.Windows.Forms.PictureBox();
+            this.Minimize = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -60,10 +62,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimize)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.BackColor = System.Drawing.Color.Black;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -71,37 +79,27 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(120, 281);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(740, 263);
+            this.listView1.Size = new System.Drawing.Size(765, 263);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView1_AfterLabelEdit);
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(826, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 31);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
-            this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(391, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(501, 238);
+            this.pictureBox1.Size = new System.Drawing.Size(465, 238);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(862, 129);
@@ -114,6 +112,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(123, 88);
             this.pictureBox4.Name = "pictureBox4";
@@ -124,6 +123,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Typold Extended Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -135,6 +135,7 @@
             // 
             // movieLabel
             // 
+            this.movieLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.movieLabel.AutoSize = true;
             this.movieLabel.Font = new System.Drawing.Font("XXII DONT-MESS-WITH-VIKINGS", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movieLabel.ForeColor = System.Drawing.Color.White;
@@ -146,6 +147,7 @@
             // 
             // AudiencWatchLabel
             // 
+            this.AudiencWatchLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AudiencWatchLabel.AutoSize = true;
             this.AudiencWatchLabel.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AudiencWatchLabel.ForeColor = System.Drawing.Color.LimeGreen;
@@ -157,6 +159,7 @@
             // 
             // yearLabel
             // 
+            this.yearLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.yearLabel.AutoSize = true;
             this.yearLabel.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.yearLabel.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,6 +172,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.richTextBox1.BackColor = System.Drawing.Color.Black;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.CausesValidation = false;
@@ -179,7 +183,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(282, 89);
+            this.richTextBox1.Size = new System.Drawing.Size(256, 89);
             this.richTextBox1.TabIndex = 31;
             this.richTextBox1.Text = "After selling his soul to save a loved one, daredevil biker Johnny Blaze pays the" +
     " price by becoming a flame-skulled bounty hunter for Mephistopheles";
@@ -190,6 +194,8 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.settingsBtn);
             this.panel3.Controls.Add(this.likedVideosBtn);
@@ -198,7 +204,6 @@
             this.panel3.Controls.Add(this.historyBtn);
             this.panel3.Controls.Add(this.searchBtn);
             this.panel3.Controls.Add(this.homeBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 544);
@@ -296,12 +301,63 @@
             this.homeBtn.TabStop = false;
             this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.Close);
+            this.panel1.Controls.Add(this.Maximize);
+            this.panel1.Controls.Add(this.Minimize);
+            this.panel1.Location = new System.Drawing.Point(751, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(141, 26);
+            this.panel1.TabIndex = 35;
+            // 
+            // Close
+            // 
+            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
+            this.Close.Location = new System.Drawing.Point(96, 0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(45, 23);
+            this.Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Close.TabIndex = 26;
+            this.Close.TabStop = false;
+            this.Close.Click += new System.EventHandler(this.closebtn_Click);
+            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
+            this.Close.MouseHover += new System.EventHandler(this.Close_MouseHover);
+            // 
+            // Maximize
+            // 
+            this.Maximize.Image = ((System.Drawing.Image)(resources.GetObject("Maximize.Image")));
+            this.Maximize.Location = new System.Drawing.Point(52, 0);
+            this.Maximize.Name = "Maximize";
+            this.Maximize.Size = new System.Drawing.Size(44, 23);
+            this.Maximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Maximize.TabIndex = 27;
+            this.Maximize.TabStop = false;
+            this.Maximize.Click += new System.EventHandler(this.maximizeBtn_Click);
+            this.Maximize.MouseLeave += new System.EventHandler(this.Maximize_MouseLeave);
+            this.Maximize.MouseHover += new System.EventHandler(this.Maximize_MouseHover);
+            // 
+            // Minimize
+            // 
+            this.Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Minimize.Image")));
+            this.Minimize.Location = new System.Drawing.Point(8, 0);
+            this.Minimize.Name = "Minimize";
+            this.Minimize.Size = new System.Drawing.Size(44, 23);
+            this.Minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Minimize.TabIndex = 28;
+            this.Minimize.TabStop = false;
+            this.Minimize.Click += new System.EventHandler(this.minimizebtn_Click);
+            this.Minimize.MouseLeave += new System.EventHandler(this.Minimize_MouseLeave);
+            this.Minimize.MouseHover += new System.EventHandler(this.Minimize_MouseHover);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(888, 544);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.yearLabel);
@@ -310,7 +366,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -320,7 +375,6 @@
             this.Text = "MainPage";
             this.Load += new System.EventHandler(this.MainPage_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -331,6 +385,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.historyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Maximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,7 +397,6 @@
         #endregion
 
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -357,5 +414,9 @@
         private System.Windows.Forms.PictureBox searchBtn;
         private System.Windows.Forms.PictureBox homeBtn;
         private System.Windows.Forms.PictureBox settingsBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox Close;
+        private System.Windows.Forms.PictureBox Maximize;
+        private System.Windows.Forms.PictureBox Minimize;
     }
 }

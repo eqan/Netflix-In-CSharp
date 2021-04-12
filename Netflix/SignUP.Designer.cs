@@ -42,23 +42,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.statusSymbolID = new System.Windows.Forms.PictureBox();
             this.statusSymbolPassword = new System.Windows.Forms.PictureBox();
             this.statusSymbolConfirmPassword = new System.Windows.Forms.PictureBox();
             this.statusID = new System.Windows.Forms.Label();
             this.statusPassword = new System.Windows.Forms.Label();
             this.statusConfirmPassword = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Close = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusSymbolID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusSymbolPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusSymbolConfirmPassword)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.SuspendLayout();
             // 
             // resetBtn
             // 
+            this.resetBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.resetBtn.BackColor = System.Drawing.Color.Red;
             this.resetBtn.FlatAppearance.BorderSize = 0;
             this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -76,6 +79,7 @@
             // 
             // signUpBtn
             // 
+            this.signUpBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.signUpBtn.BackColor = System.Drawing.Color.Red;
             this.signUpBtn.FlatAppearance.BorderSize = 0;
             this.signUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -93,6 +97,9 @@
             // 
             // passwordBox
             // 
+            this.passwordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordBox.BackColor = System.Drawing.Color.Black;
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordBox.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,6 +113,8 @@
             // 
             // password
             // 
+            this.password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.password.AutoSize = true;
             this.password.Font = new System.Drawing.Font("XXII DONT-MESS-WITH-VIKINGS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.White;
@@ -117,6 +126,9 @@
             // 
             // userIDBox
             // 
+            this.userIDBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.userIDBox.BackColor = System.Drawing.Color.Black;
             this.userIDBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userIDBox.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,6 +141,8 @@
             // 
             // userID
             // 
+            this.userID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.userID.AutoSize = true;
             this.userID.BackColor = System.Drawing.Color.Black;
             this.userID.Font = new System.Drawing.Font("XXII DONT-MESS-WITH-VIKINGS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,6 +155,8 @@
             // 
             // confirmPasswordLabel
             // 
+            this.confirmPasswordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.confirmPasswordLabel.AutoSize = true;
             this.confirmPasswordLabel.Font = new System.Drawing.Font("XXII DONT-MESS-WITH-VIKINGS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPasswordLabel.ForeColor = System.Drawing.Color.White;
@@ -152,6 +168,9 @@
             // 
             // confirmPasswordBox
             // 
+            this.confirmPasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.confirmPasswordBox.BackColor = System.Drawing.Color.Black;
             this.confirmPasswordBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.confirmPasswordBox.Font = new System.Drawing.Font("CarnacW03-ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,6 +185,8 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Location = new System.Drawing.Point(314, 199);
@@ -175,6 +196,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Location = new System.Drawing.Point(314, 245);
@@ -184,6 +207,8 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Location = new System.Drawing.Point(314, 288);
@@ -204,6 +229,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(314, 36);
             this.pictureBox1.Name = "pictureBox1";
@@ -212,21 +239,9 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(740, 1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 49);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 21;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
-            this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
-            // 
             // statusSymbolID
             // 
+            this.statusSymbolID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.statusSymbolID.Location = new System.Drawing.Point(620, 169);
             this.statusSymbolID.Name = "statusSymbolID";
             this.statusSymbolID.Size = new System.Drawing.Size(39, 42);
@@ -236,6 +251,7 @@
             // 
             // statusSymbolPassword
             // 
+            this.statusSymbolPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.statusSymbolPassword.Location = new System.Drawing.Point(620, 217);
             this.statusSymbolPassword.Name = "statusSymbolPassword";
             this.statusSymbolPassword.Size = new System.Drawing.Size(39, 42);
@@ -245,6 +261,7 @@
             // 
             // statusSymbolConfirmPassword
             // 
+            this.statusSymbolConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.statusSymbolConfirmPassword.Location = new System.Drawing.Point(620, 265);
             this.statusSymbolConfirmPassword.Name = "statusSymbolConfirmPassword";
             this.statusSymbolConfirmPassword.Size = new System.Drawing.Size(39, 42);
@@ -282,6 +299,28 @@
             this.statusConfirmPassword.Size = new System.Drawing.Size(0, 14);
             this.statusConfirmPassword.TabIndex = 27;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.Close);
+            this.panel1.Location = new System.Drawing.Point(659, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(141, 26);
+            this.panel1.TabIndex = 35;
+            // 
+            // Close
+            // 
+            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
+            this.Close.Location = new System.Drawing.Point(96, 0);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(45, 23);
+            this.Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Close.TabIndex = 26;
+            this.Close.TabStop = false;
+            this.Close.Click += new System.EventHandler(this.closebtn_Click);
+            this.Close.MouseLeave += new System.EventHandler(this.Close_MouseLeave);
+            this.Close.MouseHover += new System.EventHandler(this.Close_MouseHover);
+            // 
             // SignUP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,13 +328,13 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusConfirmPassword);
             this.Controls.Add(this.statusPassword);
             this.Controls.Add(this.statusID);
             this.Controls.Add(this.statusSymbolConfirmPassword);
             this.Controls.Add(this.statusSymbolPassword);
             this.Controls.Add(this.statusSymbolID);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -317,10 +356,11 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusSymbolID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusSymbolPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusSymbolConfirmPassword)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,12 +381,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox statusSymbolID;
         private System.Windows.Forms.PictureBox statusSymbolPassword;
         private System.Windows.Forms.PictureBox statusSymbolConfirmPassword;
         private System.Windows.Forms.Label statusID;
         private System.Windows.Forms.Label statusPassword;
         private System.Windows.Forms.Label statusConfirmPassword;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox Close;
     }
 }
