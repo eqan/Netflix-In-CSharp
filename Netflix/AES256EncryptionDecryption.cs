@@ -15,7 +15,8 @@ namespace Netflix
 
 			// Convert hashed password to array
 			key = Encoding.ASCII.GetBytes(hashedPassword);
-
+			// Initializtion Vector
+			// used as the initial hash value before any data is fed in
             // Create secret IV
             iv = new byte[16] { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 };
         }
