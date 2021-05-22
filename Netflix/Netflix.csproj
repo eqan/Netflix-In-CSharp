@@ -56,6 +56,7 @@
     <Compile Include="AccountInfo.Designer.cs">
       <DependentUpon>AccountInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="AES256EncryptionDecryption.cs" />
     <Compile Include="DoublyLinkedList.cs" />
     <Compile Include="FileHandlingUtilites.cs" />
     <Compile Include="Fisher-YatesAlgo.cs" />
