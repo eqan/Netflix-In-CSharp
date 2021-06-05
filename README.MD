@@ -27,18 +27,15 @@ Utilizing the best of Algorithms, I have created this project on an experimental
 > - [x] Using Hashing Algorithm For Ultra Fast Search Results
 > - [x] Full localized Data Base System
 > - [x] Efficient Usage Of Data Structures & Algorithms
-
 > ## Future Prospects
 > - [ ] AES 256 Encryption For Passwords  
 > - [ ] Code Optimization  
 > - [ ] Shortcut keys
 > - [ ] Simplifying Methods 
-
 > ## Installation & Debugging
 > 1. Download This Repo
 > 2. Install AX Movie Player SDK from Visual Studio Extension Market[You Need To Have Visual Studio To Edit & Debug]
 > 3. Debug This Project :)
-
 > ## General Usage
 > 1. Download This Repo
 > 2. Go to the Neflix directory & then follow this path
